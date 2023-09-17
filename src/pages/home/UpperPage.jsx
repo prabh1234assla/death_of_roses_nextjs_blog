@@ -13,11 +13,10 @@ export default function UpperPage() {
     <div className="h-screen w-screen bg-primary overflow-y-scroll">
       <Navbar />
 
-      <div className="flex justify-between z-10 relative items-center max-[1495px]:flex-col max-[1495px]:gap-4 max-[1495px]:p-2 max-[616px]:gap-0">
+      <div className="flex justify-between z-10 relative items-center max-[1495px]:flex-col max-[1495px]:gap-4 max-[1495px]:p-4 max-[616px]:gap-0">
         <div
           className={
-            `h-[${wallpaper_loader.getHeight()}px] w-[${wallpaper_loader.getWidth()}px]` +
-            " relative max-[805px]:scale-[.75] max-[616px]:scale-[.65] max-[616px]:-top-[150px] max-[535px]:scale-[.55] max-[451px]:scale-[.45] max-[451px]:-translate-y-[100px] max-[376px]:scale-[.35] max-[376px]:-translate-y-[120px] max-[286px]:scale-[.25] max-[286px]:-translate-y-[180px]"
+            "w-[794px] h-[958px] relative max-[805px]:scale-[.75] max-[616px]:scale-[.65] max-[616px]:-top-[150px] max-[535px]:scale-[.55] max-[451px]:scale-[.45] max-[451px]:-translate-y-[100px] max-[376px]:scale-[.35] max-[376px]:-translate-y-[120px] max-[286px]:scale-[.25] max-[286px]:-translate-y-[180px]"
           }
         >
           <Image
@@ -30,8 +29,7 @@ export default function UpperPage() {
 
           <div
             className={
-              "absolute left-0 top-0 w-[405px] bg-tertiary-1100 bg-opacity-10 " +
-              `h-[${wallpaper_loader.getHeight()}px]`
+              "absolute left-0 top-0 w-[405px] bg-tertiary-1100 bg-opacity-10 h-[958px]"
             }
           >
             <div className="w-[200px] ml-[20px] text-secondary-400 font-serif_li">
