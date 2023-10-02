@@ -1,4 +1,6 @@
 import '@/styles/globals.css'
+import '@/styles/thoughts/thoughts.css'
+import '@/styles/poetry/poems.css'
 import { Oswald } from 'next/font/google'
 
 const oswald =  Oswald({

@@ -1,0 +1,11 @@
+.thought {
+  background: linear-gradient(
+    270deg,
+    rgba(159, 30, 99, 0.7) 11.1%,
+    rgba(246, 76, 114, 0.68) 29.35%,
+    #bf508d 52.41%,
+    #762e55 81.5%
+  );
+
+  transition: transform 200ms;
+}

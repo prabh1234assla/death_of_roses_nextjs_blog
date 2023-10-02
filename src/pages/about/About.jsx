@@ -44,7 +44,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="absolute flex justify-center w-screen bottom-2 max-[1226px]:relative max-[609px]:bg-tertiary-900 max-[609px]:h-fit">
+          <div className="absolute flex justify-center w-screen bottom-0 max-[1226px]:relative max-[609px]:bg-tertiary-900 max-[609px]:h-fit">
             <div className="max-[601px]:absolute max-[448px]:rotate-90 max-[414px]:hidden max-[663px]:rotate-90 max-[609px]:hidden max-[663px]:z-10">
               <Image
                 src={window_loader.getAsset()}

@@ -15,7 +15,7 @@ export default function Navbar() {
   const navbarButtons = ["HOME", "ABOUT", "POETRY", "THOUGHTS"].map(
     (el, index) => (
       <>
-        <div className="text-center">
+        <div className="text-center m-1 max-[544px]:m-0">
           <Link
             href={navlinks[index]}
             className={
