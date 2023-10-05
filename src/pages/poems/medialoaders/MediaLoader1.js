@@ -1,21 +1,20 @@
-import media2 from "./../../assets/poems/media2.svg"
-import media3 from "./../../assets/poems/media3.svg"
-import media5 from "./../../assets/poems/media5.png"
-import media7 from "./../../assets/poems/media7.svg"
-import media8 from "./../../assets/poems/media8.svg"
-import media10 from "./../../assets/poems/media10.svg"
-import media11 from "./../../assets/poems/media11.svg"
-import media14 from "./../../assets/poems/media14.png"
-import media15 from "./../../assets/poems/media15.png"
-import media16 from "./../../assets/poems/media16.png"
-import media18 from "./../../assets/poems/media18.svg"
-import media19 from "./../../assets/poems/media19.svg"
-import media20 from "./../../assets/poems/media20.png"
-import media22 from "./../../assets/poems/media22.png"
-import media23 from "./../../assets/poems/media23.png"
-import rose_banner from "./../../assets/poems/rose_banner.svg"
+import media2 from "./../../../assets/poems/page1/media2.svg"
+import media3 from "./../../../assets/poems/page1/media3.svg"
+import media5 from "./../../../assets/poems/page1/media5.png"
+import media7 from "./../../../assets/poems/page1/media7.svg"
+import media8 from "./../../../assets/poems/page1/media8.svg"
+import media10 from "./../../../assets/poems/page1/media10.svg"
+import media11 from "./../../../assets/poems/page1/media11.svg"
+import media14 from "./../../../assets/poems/page1/media14.png"
+import media15 from "./../../../assets/poems/page1/media15.png"
+import media16 from "./../../../assets/poems/page1/media16.png"
+import media18 from "./../../../assets/poems/page1/media18.svg"
+import media19 from "./../../../assets/poems/page1/media19.svg"
+import media20 from "./../../../assets/poems/page1/media20.png"
+import media22 from "./../../../assets/poems/page1/media22.png"
+import media23 from "./../../../assets/poems/page1/media23.png"
 
-import assetsloader from "../../components/assetsloader"
+import assetsloader from "../../../components/assetsloader"
 
 const width = 300
 const height = 300
@@ -35,7 +34,6 @@ const media19_loader = new assetsloader(media19, width, height)
 const media20_loader = new assetsloader(media20, width, height)
 const media22_loader = new assetsloader(media22, width, height)
 const media23_loader = new assetsloader(media23, width, height)
-const rose_banner_loader = new assetsloader(rose_banner, width, height)
 
 export default function *media_loader() {
     yield media2_loader
@@ -52,6 +50,5 @@ export default function *media_loader() {
     yield media19_loader
     yield media20_loader
     yield media22_loader
-    yield media23_loader
-    return rose_banner_loader
+    return media23_loader
 }

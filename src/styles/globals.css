@@ -34,3 +34,13 @@
   font-family: 'source-serif-pro-Regular';
   src: url('../assets/fonts/source-serif-pro/SourceSerifPro-Regular.otf') format('opentype');
 }
+
+@font-face {
+  font-family: 'mother-sunflower-sans';
+  src: url('../assets/fonts/mother-sunflower-sans-font/MotherSunflowerSans-2O0nl.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'flower-power-font';
+  src: url('../assets/fonts/flower-power-font/FlowerPowerBold-mne9.ttf') format('opentype');
+}

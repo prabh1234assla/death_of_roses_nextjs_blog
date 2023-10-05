@@ -3,7 +3,7 @@ import LowerPage from './home/LowerPage'
 import UpperPage from './home/UpperPage'
 import About from './about/About.jsx'
 import Thoughts from './thoughts/Thoughts'
-import Poems from './poetry/Poems'
+import Poems from './poems/Poems'
 
 export default function Home() {
   return (

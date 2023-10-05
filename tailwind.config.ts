@@ -33,7 +33,11 @@ const config: Config = {
           1000: '#D567A4',
           1100: '#CA4475',
           1200: '#E42088',
-          1300: '#881F63'
+          1300: '#881F63',
+          1400: '#D35F9F',
+          1500: '#DE8DBA',
+          1600: '#FF7D92',
+          1700: '#F56695'
         },
         tertiary: {
           100: '#EBB8D4',
@@ -47,7 +51,9 @@ const config: Config = {
           900: '#E97D95',
           1000: '#FF8080',
           1100: '#F64C72',
-          1200: '#CC1577'
+          1200: '#CC1577',
+          1300: '#613861',
+          1400: '#881F63'
         }
       },
       fontFamily: {
@@ -57,7 +63,9 @@ const config: Config = {
         serif_eli : 'source-serif-pro-ExtraLightIt',
         serif_i : 'source-serif-pro-It',
         serif_regular : 'source-serif-pro-Regular',
-        oswald : 'var(--font-oswald)'
+        oswald : 'var(--font-oswald)',
+        sunflower_sans : 'mother-sunflower-sans',
+        flower_power : 'flower-power-font'
       }
     },
   },
