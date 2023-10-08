@@ -1,23 +1,73 @@
 import Poetry from "@/components/poetry/Poetry";
 import media_loader_one from "./medialoaders/MediaLoader1";
 import media_loader_two from "./medialoaders/MediaLoader2";
+import rose_banner from "../../assets/poems/page2/rose_banner.svg";
+import arrow_to_left from "../../assets/poems/page2/arrow_to_left.svg";
+import arrow_to_right from "../../assets/poems/page2/arrow_to_right.svg";
+import assetsloader from "@/components/assetsloader";
 import GoToHome from "@/components/GoToHome";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Poems() {
   const poetry_indices = [
     [0, 3, 5, 8, 11, 12, 16, 21, 23],
-    [0, 3, 5, 7, 10, 12, 15, 19, 22]
+    [0, 3, 5, 7, 10, 12, 15, 19, 22],
   ];
 
   const title_text_size = [
-    ['text-[50px]', 'text-[50px]', 'text-[50px]', 'text-[50px]', 'text-[50px]', 'text-[50px]', 'text-[50px]', 'text-[50px]', 'text-[50px]'],
-    ['text-[40px]', 'text-[30px]', 'text-[40px]', 'text-[30px]', 'text-[46px]', 'text-[42px]', 'text-[35px]', 'text-[38px]', 'text-[35px]']
-  ]
+    [
+      "text-[50px]",
+      "text-[50px]",
+      "text-[50px]",
+      "text-[50px]",
+      "text-[50px]",
+      "text-[50px]",
+      "text-[50px]",
+      "text-[50px]",
+      "text-[50px]",
+    ],
+    [
+      "text-[40px]",
+      "text-[30px]",
+      "text-[40px]",
+      "text-[30px]",
+      "text-[46px]",
+      "text-[42px]",
+      "text-[35px]",
+      "text-[38px]",
+      "text-[35px]",
+    ],
+  ];
 
   const poem_id_text_size = [
-    ['text-[140px]', 'text-[140px]', 'text-[140px]', 'text-[140px]', 'text-[140px]', 'text-[140px]', 'text-[140px]', 'text-[140px]', 'text-[140px]'],
-    ['text-[90px]', 'text-[100px]', 'text-[90px]', 'text-[105px]', 'text-[80px]', 'text-[90px]', 'text-[100px]', 'text-[100px]', 'text-[100px]']
-  ]
+    [
+      "text-[140px]",
+      "text-[140px]",
+      "text-[140px]",
+      "text-[140px]",
+      "text-[140px]",
+      "text-[140px]",
+      "text-[140px]",
+      "text-[140px]",
+      "text-[140px]",
+    ],
+    [
+      "text-[90px]",
+      "text-[100px]",
+      "text-[90px]",
+      "text-[105px]",
+      "text-[80px]",
+      "text-[90px]",
+      "text-[100px]",
+      "text-[100px]",
+      "text-[100px]",
+    ],
+  ];
+
+  const rose_banner_loader = new assetsloader(rose_banner, 257.25, 499.9);
+  const arrow_to_left_loader = new assetsloader(arrow_to_left, 76*2.5, 76*2.5);
+  const arrow_to_right_loader = new assetsloader(arrow_to_right, 76*2.5, 76*2.5);
 
   function* colors_poem_one() {
     yield "bg-tertiary-300 outline-secondary-1000 text-secondary-700";
@@ -43,7 +93,7 @@ export default function Poems() {
     return "bg-secondary-500 outline-tertiary-1300 text-tertiary-1300";
   }
 
-  function* rotation_adjustment_one(){
+  function* rotation_adjustment_one() {
     yield {
       rotate_title_text: 17 + 7,
       rotate_container: -59 - 11 - 14,
@@ -90,7 +140,7 @@ export default function Poems() {
     };
   }
 
-  function* rotation_adjustment_two(){
+  function* rotation_adjustment_two() {
     yield {
       rotate_title_text: 18,
       rotate_container: -59 - 11 - 45,
@@ -130,7 +180,7 @@ export default function Poems() {
       rotate_title_text: 15,
       rotate_container: -60,
     };
-    
+
     return {
       rotate_title_text: 15,
       rotate_container: -148,
@@ -139,32 +189,72 @@ export default function Poems() {
 
   return (
     <div className="w-screen h-screen bg-primary overflow-scroll flex flex-col items-center">
-      <GoToHome />
+      <GoToHome flag={''}/>
 
-    <div className="mt-[105px] h-full flex flex-col justify-center items-center">
-      
-      {/* <Poetry
-        media_loader={() => media_loader_one()}
-        poetry_indices={poetry_indices[0]}
-        colors_poem={() => colors_poem_one()}
-        rotation_adjustment={() => rotation_adjustment_one()}
-        poetry_iterator={-1}
-        title_text_size={title_text_size[0]}
-        poem_id_text_size={poem_id_text_size[0]}
-      /> */}
-
-      <Poetry
-        media_loader={() => media_loader_two()}
-        poetry_indices={poetry_indices[1]}
-        colors_poem={() => colors_poem_two()}
-        rotation_adjustment={() => rotation_adjustment_two()}
-        poetry_iterator={8}
-        title_text_size={title_text_size[1]}
-        poem_id_text_size={poem_id_text_size[1]}
-      />
-
+      <div className="fixed left-0 top-0 w-[30vw] h-screen left_box">
+        <div className="w-full h-full flex flex-col">
+          <Image
+            src={rose_banner_loader.getAsset()}
+            alt="rose banner media"
+            width={rose_banner_loader.getWidth() * 1.8}
+            height={rose_banner_loader.getHeight() * 1.8}
+            className="m-10"
+          />
+        </div>
+      </div>
+      <div className="fixed right-0 top-0 w-[30vw] h-screen right_box">
+        <div className="w-full h-full flex flex-col justify-end items-end">
+          <Image
+            src={rose_banner_loader.getAsset()}
+            alt="rose banner media"
+            width={rose_banner_loader.getWidth() * 1.8}
+            height={rose_banner_loader.getHeight() * 1.8}
+            className="m-10"
+          />
+        </div>
       </div>
 
+      <div className="mt-[105px] h-full flex flex-row z-10">
+          <Image
+            src={arrow_to_left_loader.getAsset()}
+            alt="arrow to left media"
+            width={arrow_to_left_loader.getWidth()}
+            height={arrow_to_left_loader.getHeight()}
+            className="m-10 hover:scale-[.8] arrow_to_left_button active:opacity-[.8]"
+          />
+
+        <Poetry
+          media_loader={() => media_loader_one()}
+          poetry_indices={poetry_indices[0]}
+          colors_poem={() => colors_poem_one()}
+          rotation_adjustment={() => rotation_adjustment_one()}
+          poetry_iterator={-1}
+          title_text_size={title_text_size[0]}
+          poem_id_text_size={poem_id_text_size[0]}
+          opacity_one={"opacity-[1]"}
+          opacity_two={"opacity-[.4]"}
+        />
+        
+        <Poetry
+          media_loader={() => media_loader_two()}
+          poetry_indices={poetry_indices[1]}
+          colors_poem={() => colors_poem_two()}
+          rotation_adjustment={() => rotation_adjustment_two()}
+          poetry_iterator={8}
+          title_text_size={title_text_size[1]}
+          poem_id_text_size={poem_id_text_size[1]}
+          opacity_one={"opacity-[.4]"}
+          opacity_two={"opacity-[1]"}
+        />
+
+          <Image
+            src={arrow_to_right_loader.getAsset()}
+            alt="arrow to right media"
+            width={arrow_to_right_loader.getWidth()}
+            height={arrow_to_right_loader.getHeight()}
+            className="m-10 hover:scale-[.8] arrow_to_right_button active:opacity-[.8]"
+          />
+      </div>
     </div>
   );
 }

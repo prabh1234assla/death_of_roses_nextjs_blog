@@ -7,12 +7,11 @@ export default function Thoughts() {
   const media_loader_for_icons = media_loader();
   return (
     <div className="w-screen h-screen bg-primary overflow-hidden flex flex-col items-center">
-      <GoToHome />
+      <GoToHome flag={''}/>
 
       <div className="flex flex-col items-center justify-between w-screen mt-[100px] h-screen overflow-scroll">
         {quotes.map((el) => {
           let asset = media_loader_for_icons.next().value;
-          console.log("iufverfhefuheufhe", el, asset)
           return (
             <>
               <Thought

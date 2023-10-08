@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-hook/resize-observer": "^1.2.6",
+    "cloudinary": "^1.41.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "mongodb": "^6.1.0",

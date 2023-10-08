@@ -19,7 +19,7 @@ import assetsloader from "../../../components/assetsloader"
 const width = 300
 const height = 300
 
-const media2_loader = new assetsloader(media2, width, height)
+const media2_loader = new assetsloader(media2, width*1.3, height*1.3)
 const media3_loader = new assetsloader(media3, width, height)
 const media5_loader = new assetsloader(media5, width, height)
 const media7_loader = new assetsloader(media7, width, height)
@@ -29,8 +29,8 @@ const media11_loader = new assetsloader(media11, width, height)
 const media14_loader = new assetsloader(media14, width, height)
 const media15_loader = new assetsloader(media15, width, height)
 const media16_loader = new assetsloader(media16, width, height)
-const media18_loader = new assetsloader(media18, width, height)
-const media19_loader = new assetsloader(media19, width, height)
+const media18_loader = new assetsloader(media18, width*1.2, height*1.2)
+const media19_loader = new assetsloader(media19, width*1.2, height*1.2)
 const media20_loader = new assetsloader(media20, width, height)
 const media22_loader = new assetsloader(media22, width, height)
 const media23_loader = new assetsloader(media23, width, height)

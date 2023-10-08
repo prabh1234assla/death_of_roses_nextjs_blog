@@ -1,6 +1,7 @@
 import Image from "next/image";
 import TextOnCircle from "./TextOnCircle";
 import poems from "../../../lib/poems.json";
+import Link from "next/link";
 
 export default function Poetry({
   media_loader,
@@ -9,7 +10,9 @@ export default function Poetry({
   rotation_adjustment,
   poetry_iterator,
   title_text_size,
-  poem_id_text_size
+  poem_id_text_size,
+  opacity_one,
+  opacity_two
 }) {
   const media_loader_for_images = media_loader();
   const colors_for_poems = colors_poem();
@@ -19,7 +22,7 @@ export default function Poetry({
 
   return (
     <>
-      <div className="w-screen h-full flex flex-col justify-center items-center gap-6">
+      <div className="w-fit h-full flex flex-col justify-center items-center gap-6">
         <div className="w-fit h-fit grid grid-cols-6 max-[1250px]:grid-cols-4 max-[650px]:grid-cols-3 max-[486px]:grid-cols-2 max-[360px]:grid-cols-1 bg-secondary-800 bg-opacity-[.4] border-tertiary-1100 border-4 p-4">
           {[...Array(24).keys()]
             .map((el) => {
@@ -48,27 +51,29 @@ export default function Poetry({
                 ++text_sizes_iterator;
                 return (
                   <>
-                    <div className="w-full h-full flex justify-center items-center hover:scale-[.8] poetry">
-                      <div
-                        className={
-                          "w-[300px] h-[300px] rounded-full outline-double outline-[10px] outline-offset-4 text-center flex justify-center items-center relative " +
-                          `${colors_asset}`
-                        }
-                      >
-                        <div className={title_text_size[text_sizes_iterator] + " font-sunflower_sans font-semibold title_in_circle"}>
-                          <TextOnCircle
-                            title={poems[poetry_iterator].title.toUpperCase()}
+                    <Link href={`/poems/${poems[poetry_iterator].slug}`}>
+                      <div className="w-full h-full flex justify-center items-center hover:scale-[.8] poetry">
+                        <div
+                          className={
+                            "w-[300px] h-[300px] rounded-full outline-double outline-[10px] outline-offset-4 text-center flex justify-center items-center relative " +
+                            `${colors_asset}`
+                          }
+                        >
+                          <div className={title_text_size[text_sizes_iterator] + " font-sunflower_sans font-semibold title_in_circle"}>
+                            <TextOnCircle
+                              title={poems[poetry_iterator].title.toUpperCase()}
 
-                            rotate_title_text={rotation_asset.rotate_title_text}
+                              rotate_title_text={rotation_asset.rotate_title_text}
 
-                            rotate_container={rotation_asset.rotate_container}
-                          />
-                        </div>
-                        <div className={poem_id_text_size[text_sizes_iterator] + " font-flower_power font-light absolute ml-3"}>
-                          {poems[poetry_iterator].id.toUpperCase()}
+                              rotate_container={rotation_asset.rotate_container}
+                            />
+                          </div>
+                          <div className={poem_id_text_size[text_sizes_iterator] + " font-flower_power font-light absolute ml-3"}>
+                            {poems[poetry_iterator].id.toUpperCase()}
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </>
                 );
               }
@@ -83,8 +88,8 @@ export default function Poetry({
         </div>
 
         <div className="w-full h-[50px] flex justify-center items-center gap-8">
-          <div className="h-[16px] w-[700px] hover:scale-[.8] carousel_bar bg-tertiary-700"></div>
-          <div className="h-[16px] w-[700px] hover:scale-[.8] carousel_bar bg-tertiary-1200 border-2 border-tertiary-300 border-spacing-4"></div>
+          <div className={"h-[16px] w-[700px] hover:scale-[.7] carousel_bar rounded-full bg-tertiary-700 " + opacity_one}></div>
+          <div className={"h-[16px] w-[700px] hover:scale-[.7] carousel_bar rounded-full bg-tertiary-700 " + opacity_two}></div>
         </div>
       </div>
     </>

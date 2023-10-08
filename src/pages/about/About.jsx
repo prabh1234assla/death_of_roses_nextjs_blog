@@ -11,7 +11,7 @@ export default function About() {
   return (
     <>
       <div className="w-screen h-screen bg-primary overflow-hidden max-[1226px]:overflow-y-scroll flex-col">
-        <GoToHome />
+        <GoToHome flag={''}/>
 
         <div className="flex justify-between max-[1226px]:flex-col">
           <div className="h-fit w-fit border-r-[16px] border-tertiary-1100">

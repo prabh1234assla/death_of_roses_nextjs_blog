@@ -44,3 +44,13 @@
   font-family: 'flower-power-font';
   src: url('../assets/fonts/flower-power-font/FlowerPowerBold-mne9.ttf') format('opentype');
 }
+
+@font-face {
+  font-family: 'geesor-unique-font';
+  src: url('../assets/fonts/geesor-unique-font/GeesorUniqueDemoRegular-51Ada.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'rostley-font';
+  src: url('../assets/fonts/rostley-font/RostleyPersonalUseOnlyRegular-nRp7J.otf') format('opentype');
+}

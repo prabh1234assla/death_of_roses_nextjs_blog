@@ -65,7 +65,9 @@ const config: Config = {
         serif_regular : 'source-serif-pro-Regular',
         oswald : 'var(--font-oswald)',
         sunflower_sans : 'mother-sunflower-sans',
-        flower_power : 'flower-power-font'
+        flower_power : 'flower-power-font',
+        geesor : 'geesor-unique-font',
+        rostley : 'rostley-font'
       }
     },
   },

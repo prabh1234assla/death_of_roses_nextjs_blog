@@ -1,3 +1,27 @@
-.poetry, .carousel_bar{
-    transition: transform 200ms;
+.poetry {
+  transition: transform 200ms;
+}
+
+.carousel_bar {
+  transition: transform 200ms;
+}
+
+.left_box{
+  background: linear-gradient(90deg, #881f63 0%, rgba(85, 61, 103, 0) 100%);
+}
+
+.right_box{
+  background: linear-gradient(90deg, rgba(85, 61, 103, 0) 0%, #881F63 100%);
+}
+
+.arrow_to_left_button{
+  transition: transform 200ms;
+}
+
+.arrow_to_right_button{
+  transition: transform 200ms;
+}
+
+.display-linebreak {
+  white-space: pre-line;
 }
