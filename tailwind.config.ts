@@ -67,7 +67,8 @@ const config: Config = {
         sunflower_sans : 'mother-sunflower-sans',
         flower_power : 'flower-power-font',
         geesor : 'geesor-unique-font',
-        rostley : 'rostley-font'
+        anjelika_rose : 'anjelika-rose-font',
+        carltine_font : 'carltine-font'
       }
     },
   },

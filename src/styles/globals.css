@@ -51,6 +51,11 @@
 }
 
 @font-face {
-  font-family: 'rostley-font';
-  src: url('../assets/fonts/rostley-font/RostleyPersonalUseOnlyRegular-nRp7J.otf') format('opentype');
+  font-family: 'carltine-font';
+  src: url('../assets/fonts/carltine-font/CarltineRegular-K7z5l.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'anjelika-rose-font';
+  src: url('../assets/fonts/anjelika-rose-font/AnjelikaRose-oRGd.ttf') format('opentype');
 }

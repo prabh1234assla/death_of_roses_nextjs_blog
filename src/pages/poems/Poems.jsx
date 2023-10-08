@@ -235,7 +235,7 @@ export default function Poems() {
           opacity_two={"opacity-[.4]"}
         />
         
-        <Poetry
+        {/* <Poetry
           media_loader={() => media_loader_two()}
           poetry_indices={poetry_indices[1]}
           colors_poem={() => colors_poem_two()}
@@ -245,7 +245,7 @@ export default function Poems() {
           poem_id_text_size={poem_id_text_size[1]}
           opacity_one={"opacity-[.4]"}
           opacity_two={"opacity-[1]"}
-        />
+        /> */}
 
           <Image
             src={arrow_to_right_loader.getAsset()}

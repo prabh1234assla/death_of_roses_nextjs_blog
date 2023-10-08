@@ -31,23 +31,18 @@ export default function PoetryToRender() {
           /> */}
 
           <div className="flex justify-end items-center">
-            <div className="flex flex-col justify-center items-center bg-red-50 h-[1600px] overflow-scroll gap-10">
-              <p className="text-[100px] text-center font-geesor">{title}</p>
-              <p className="display-linebreak text-[50px] overflow-scroll font-oswald p-10">
+            <div className="flex flex-col justify-center items-center h-[1600px] p-8">
+              <p className="text-[140px] text-center font-geesor text-secondary-1000 font-semibold p-[inherit]">{title}</p>
+              <p className="display-linebreak text-[60px] overflow-scroll font-carltine_font text-tertiary-800 p-[inherit] body_background border-double border-t-8 border-b-8 border-tertiary-1100">
                 {body}
               </p>
             </div>
-            <div className="bg-green-50 h-[1600px] flex flex-col justify-end">
-              <p className="text-[120px] font-serif">
-                <span>
-                  {date_string[1]}
+            <div className="h-[1600px] flex flex-col justify-end">
+              <p className="text-[85px] font-oswald font-medium text-secondary-600 p-1">
+                <span className="text-[100px] font-light text-tertiary-1000">
+                  {date_string[1] + " " + date_string[0] + ", "}
                 </span>
-                <span className="font-rostley">
-                  {" " + date_string[0] + ", "}
-                </span>
-                <span>
-                  {date_string[2]}
-                </span>
+                <span>{date_string[2]}</span>
               </p>
             </div>
           </div>
