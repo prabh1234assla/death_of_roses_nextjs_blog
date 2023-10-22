@@ -11,8 +11,8 @@ export default function Home() {
       {/* <About /> */}
       {/* <LowerPage /> */}
       {/* <UpperPage /> */}
-       {/* <Thoughts /> */}
-       <Poems />
+      {/* <Thoughts /> */}
+      <Poems />
     </>
   )
 }

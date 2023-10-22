@@ -59,3 +59,13 @@
   font-family: 'anjelika-rose-font';
   src: url('../assets/fonts/anjelika-rose-font/AnjelikaRose-oRGd.ttf') format('opentype');
 }
+
+@font-face {
+  font-family: 'growing-garden';
+  src: url('../assets/fonts/growing-garden/GrowingGarden-Regular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'al-veshion';
+  src: url('../assets/fonts/al-veshion/Al_Veshion_PersonalUseOnly.ttf') format('opentype');
+}

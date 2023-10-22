@@ -68,7 +68,9 @@ const config: Config = {
         flower_power : 'flower-power-font',
         geesor : 'geesor-unique-font',
         anjelika_rose : 'anjelika-rose-font',
-        carltine_font : 'carltine-font'
+        carltine_font : 'carltine-font',
+        growing_garden : 'growing-garden',
+        al_veshion : 'al-veshion'
       }
     },
   },

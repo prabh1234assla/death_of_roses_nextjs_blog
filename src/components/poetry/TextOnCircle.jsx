@@ -10,6 +10,7 @@ export default function TextOnCircle({ title, rotate_title_text, rotate_containe
                   "h-[140px] w-[40px] transform absolute inline-block text-center origin-bottom rounded-full"
                 }
                 style={{rotate : `${index * rotate_title_text}deg`}}
+                key={index}
               >
                 {el}
               </span>
