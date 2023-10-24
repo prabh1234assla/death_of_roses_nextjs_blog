@@ -6,30 +6,40 @@ import {
   background_loader,
 } from "@/components/imagesloader";
 import Image from "next/image";
-import { useState, useLayoutEffect, useResizeObserver} from "react";
+import { useState, useEffect } from "react";
 
-function useSize(target) {
-  const [size, setSize] = React.useState();
+function useWindowWidth() {
+  const [windowWidth, setWindowWidth] = useState();
 
-  useLayoutEffect(() => {
-    target && setSize(target.getBoundingClientRect());
-  }, [target]);
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
 
-  console.log(target.getBoundingClientRect())
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
-  useResizeObserver(target, (entry) => setSize(entry.contentRect));
-  return size;
+  return windowWidth;
 }
 
 export default function UpperPage() {
-  const [target, setTarget] = useState(null)
+  let current_width = useWindowWidth(),
+    multiplier = 1;
+
+  if (current_width > 800) multiplier = 1;
+  else if (current_width <= 800 && current_width > 590) multiplier = 0.8;
+  else if (current_width <= 590 && current_width > 490) multiplier = 0.6;
+  else if (current_width <= 490 && current_width > 400) multiplier = 0.5;
+  else if (current_width <= 400 && current_width > 320) multiplier = 0.4;
+  else if (current_width <= 320) multiplier = 0.3;
 
   return (
-    <div className="h-screen w-screen bg-primary overflow-y-scroll">
+    <div className="h-fit w-screen bg-primary overflow-y-scroll overflow-x-hidden scroll-smooth">
       <Navbar />
 
-      <div className="flex justify-between z-10 relative items-center max-[1495px]:flex-col max-[1495px]:gap-4 max-[1495px]:p-4 max-[616px]:gap-0">
-        <div className={"w-fit h-fit relative max-[805px]:w-screen"}>
+      <div className="flex justify-between h-fit z-10 relative items-center max-[1495px]:flex-col max-[1495px]:gap-4">
+        <div className="w-fit h-fit relative max-[805px]:w-screen">
           <Image
             src={wallpaper_loader.getAsset()}
             alt={"flowers wallpaper landscape"}
@@ -37,60 +47,55 @@ export default function UpperPage() {
             height={wallpaper_loader.getHeight()}
           />
 
-          <div
-            className={
-              "absolute left-0 top-0 w-[55%] h-full bg-tertiary-1100 bg-opacity-10"
-            }
-          >
-            <div className="w-[45%] ml-[20px] text-secondary-400 font-serif_li max-[750px]:text-[20%]">
-              <span className="text-[128px] inline-block max-[750px]:text-[90px]">
+          <div className="absolute left-0 top-0 w-[55%] h-full bg-tertiary-1100 bg-opacity-10">
+            <div className="w-[45%] ml-[20px] text-secondary-400 font-serif_li max-[670px]:w-[20%] max-[590px]:ml-[10px]  max-[340px]:ml-[5px]">
+              <span className="text-[128px] inline-block max-[800px]:text-[100px] max-[670px]:text-[80px] max-[590px]:text-[60px] max-[340px]:text-[30px] max-[340px]:-mt-[7px] max-[253px]:text-[25px] max-[253px]:-mt-[6px]">
                 <span className="font-serif_bi">D</span>
                 <span>eath</span>
               </span>
-              <span className="text-[80px] inline-block -mt-[50px]">
+              <span className="text-[80px] inline-block -mt-[50px] max-[800px]:text-[60px] max-[670px]:text-[40px] max-[670px]:-mt-[60px] max-[590px]:text-[40px] max-[590px]:-mt-[10px] max-[340px]:text-[30px] max-[340px]:-mt-[7px] max-[253px]:text-[25px] max-[253px]:-mt-[6px]">
                 <span className="font-serif_bi">O</span>
                 <span>f</span>
               </span>
-              <span className="text-[80px] inline-block -mt-[25px]">
+              <span className="text-[80px] inline-block -mt-[25px] max-[800px]:text-[60px] max-[670px]:text-[40px] max-[670px]:-mt-[15px] max-[590px]:text-[40px] max-[590px]:-mt-[10px] max-[340px]:text-[30px] max-[340px]:-mt-[7px] max-[253px]:text-[25px] max-[253px]:-mt-[6px]">
                 <span className="font-serif_bi">R</span>
                 <span>oses</span>
               </span>
             </div>
           </div>
 
-          <div className="absolute text-[40px] flex flex-col justify-center items-center text-secondary-400 w-full text-center bg-secondary-900 -translate-y-[105%] -translate-x-[0.5px] bg-opacity-90 xl:text-[38px] lg:text-[34px] md:text-[30px] md:leading-[50px] max-[771px]:text-[26px] max-[771px]:leading-[45px] max-[520px]:text-[20px] max-[520px]:leading-[40px] max-[452px]:text-[16px] max-[452px]:leading-[35px]">
-            <div className="absolute">
+          <div className="absolute text-[40px] flex flex-col justify-center items-center text-secondary-400 w-full text-center bg-tertiary-500 -translate-y-[100%] -translate-x-[0.5px] bg-opacity-90 xl:text-[38px] lg:text-[34px] md:text-[30px] md:leading-[50px] max-[800px]:text-[26px] max-[800px]:leading-[42px] max-[520px]:text-[20px] max-[520px]:leading-[40px] max-[400px]:text-[18px] max-[400px]:leading-[34px] max-[320px]:text-[16px] max-[320px]:leading-[30px] p-2 mix-blend-darken">
+            <div className="absolute max-[320px]:-mt-[10px]">
               <div>
                 <span className="font-serif_bi">P</span>
-                <span className="font-serif_eli">oetry</span>
+                <span className="font-serif_li">oetry</span>
               </div>
               <div className="-mt-[15px]">
                 <span className="font-serif_bi">B</span>
-                <span className="font-serif_eli">log</span>
+                <span className="font-serif_li">log</span>
               </div>
               <div className="-mt-[15px]">
                 <span className="font-serif_bi">B</span>
-                <span className="font-serif_eli">y</span>
+                <span className="font-serif_li">y</span>
               </div>
               <div className="-mt-[15px]">
                 <span className="font-serif_bi">P</span>
-                <span className="font-serif_eli">rabhdeep</span>
+                <span className="font-serif_li">rabhdeep</span>
               </div>
               <div className="-mt-[15px]">
                 <span className="font-serif_bi">S</span>
-                <span className="font-serif_eli">ingh</span>
+                <span className="font-serif_li">ingh</span>
               </div>
               <div className="-mt-[15px]">
                 <span className="font-serif_bi">A</span>
-                <span className="font-serif_eli">ssla</span>
+                <span className="font-serif_li">ssla</span>
               </div>
             </div>
             <Image
               src={garland_loader.getAsset()}
               alt={"garland wallpaper"}
-              width={garland_loader.getWidth()}
-              height={garland_loader.getHeight()}
-              ref={setTarget}
+              width={garland_loader.getWidth() * multiplier}
+              height={garland_loader.getHeight() * multiplier}
             />
           </div>
         </div>
@@ -103,9 +108,18 @@ export default function UpperPage() {
             height={flowers_loader.getHeight()}
           />
         </div>
+
+        <div className="hidden max-[1495px]:flex w-screen bg-tertiary-1100 justify-center items-center">
+          <Image
+            src={background_loader.getAsset()}
+            alt={"background wallpaper landscape"}
+            width={background_loader.getWidth()}
+            height={background_loader.getHeight()}
+          />
+        </div>
       </div>
 
-      <div className="">
+      <div className="flex max-[1495px]:hidden w-full bg-tertiary-1100 justify-center items-center">
         <Image
           src={background_loader.getAsset()}
           alt={"background wallpaper landscape"}

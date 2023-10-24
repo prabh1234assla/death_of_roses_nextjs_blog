@@ -91,7 +91,7 @@ export default function ThoughtsToRender() {
               : "mt-[250px] ")
           }
         >
-          <p className="text-[160px] font-al_veshion text-secondary-600 font-black max-[1498px]:text-[140px] max-[825px]:text-[100px] max-[586px]:text-[70px] max-[442px]:text-[50px]">
+          <p className="text-[160px] font-al_veshion text-secondary-600 font-black max-[1498px]:text-[140px] max-[825px]:text-[100px] max-[586px]:text-[70px] max-[442px]:text-[50px] max-[240px]:text-[40px]">
             {tag + "."}
           </p>
 

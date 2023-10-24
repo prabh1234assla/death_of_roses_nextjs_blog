@@ -22,7 +22,7 @@ export default function Poetry({
 
   return (
     <>
-      <div className="w-full h-full grid grid-cols-6 max-[2200px]:grid-cols-4 max-[1400px]:grid-cols-3 bg-secondary-800 bg-opacity-[.4] border-tertiary-1100 border-4 p-4 max-[600px]:grid-cols-2 max-[635px]:border-0 max-[1000px]:w-[100vw] min-[320px]:mt-[1600px] z-10 max-[240px]:grid-cols-1 max-[240px]:mt-[4500px]">
+      <div className="grid grid-cols-6 max-[2200px]:grid-cols-4 max-[1400px]:grid-cols-3 bg-secondary-800 bg-opacity-[.4] border-tertiary-1100 border-4 max-[600px]:grid-cols-2 max-[635px]:border-0 max-[1000px]:w-[100vw] z-10 max-[240px]:grid-cols-1">
         {[...Array(24).keys()]
           .map((el) => {
             if (!poetry_indices.includes(el)) {

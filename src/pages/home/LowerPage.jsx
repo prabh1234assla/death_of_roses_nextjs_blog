@@ -1,12 +1,13 @@
-import Image from "next/image"
-import contactsAssetsGenerator from "@/components/contactsloader"
-import Navbar from "../../components/Navbar"
+import Image from "next/image";
+import contactsAssetsGenerator from "@/components/contactsloader";
+import Navbar from "../../components/Navbar";
 import {
   rose_chain_loader,
   custom_made_flower_wallpaper_loader,
   flower_wallpaper_loader,
-} from "@/components/imagesloader"
-import Link from "next/link"
+  border_loader,
+} from "@/components/imagesloader";
+import Link from "next/link";
 
 export default function LowerPage() {
   const footerOptions_rightFlex_object = {
@@ -96,102 +97,122 @@ export default function LowerPage() {
   return (
     <div className="h-screen w-screen bg-primary overflow-y-scroll">
       <Navbar />
-      <div className="flex justify-between items-center max-[1350px]:flex-col max-[1350px]:mt-10 max-[1350px]:gap-10">
-        <div className="pl-[20px] pr-[20px] flex flex-col justify-center items-center gap-[100px] max-[532px]:gap-[50px]">
-          <Image
-            src={rose_chain_loader.getAsset()}
-            id="rosechain"
-            alt="chain of roses"
-            width={rose_chain_loader.getWidth()}
-            height={rose_chain_loader.getHeight()}
-          />
+      <div className="h-full flex flex-col justify-between">
+        <div className="flex justify-between items-center max-[1350px]:flex-col max-[1350px]:mt-10 max-[1350px]:gap-10">
+          <div className="pl-[20px] pr-[20px] flex flex-col justify-center items-center gap-[100px] max-[532px]:gap-[50px]">
+            <Image
+              src={rose_chain_loader.getAsset()}
+              id="rosechain"
+              alt="chain of roses"
+              width={rose_chain_loader.getWidth()}
+              height={rose_chain_loader.getHeight()}
+            />
 
-          <p className="hidden font-serif_sbi rounded-full text-[20px] text-secondary-900 w-full bg-tertiary-400 bg-opacity-70 text-center max-[532px]:block max-[486px]:text-[16px]">
-            <p>&quot;anthology</p>
-            <p className="-mt-[10px]">for</p>
-            <p className="-mt-[10px]">broken hearts</p>
-            <p className="-mt-[10px]">and</p>
-            <p className="-mt-[10px]">soft souls&quot;</p>
-          </p>
-
-          <div className="flex justify-center items-center relative">
-            <div className="font-serif_sbi text-[26px] text-tertiary-800 absolute m-auto -mt-[220px] max-[1350px]:m-0 max-[1350px]:-mt-[220px] max-[696px]:text-[25px] max-[687px]:translate-x-3 max-[666px]:text-[24px] max-[648px]:translate-y-4 max-[602px]:text-[20px] max-[552px]:text-[18px] max-[532px]:hidden">
+            <p className="hidden font-serif_sbi rounded-full text-[20px] text-secondary-900 w-full bg-tertiary-400 bg-opacity-70 text-center max-[532px]:block max-[486px]:text-[16px]">
               <p>&quot;anthology</p>
               <p className="-mt-[10px]">for</p>
               <p className="-mt-[10px]">broken hearts</p>
               <p className="-mt-[10px]">and</p>
               <p className="-mt-[10px]">soft souls&quot;</p>
-            </div>
+            </p>
 
+            <div className="flex justify-center items-center relative">
+              <div className="font-serif_sbi text-[26px] text-tertiary-800 absolute m-auto -mt-[220px] max-[1350px]:m-0 max-[1350px]:-mt-[220px] max-[696px]:text-[25px] max-[687px]:translate-x-3 max-[666px]:text-[24px] max-[648px]:translate-y-4 max-[602px]:text-[20px] max-[552px]:text-[18px] max-[532px]:hidden">
+                <p>&quot;anthology</p>
+                <p className="-mt-[10px]">for</p>
+                <p className="-mt-[10px]">broken hearts</p>
+                <p className="-mt-[10px]">and</p>
+                <p className="-mt-[10px]">soft souls&quot;</p>
+              </div>
+
+              <Image
+                src={custom_made_flower_wallpaper_loader.getAsset()}
+                alt="custom flower wallpaper"
+                width={custom_made_flower_wallpaper_loader.getWidth()}
+                height={custom_made_flower_wallpaper_loader.getHeight()}
+              />
+            </div>
+          </div>
+
+          <div>
             <Image
-              src={custom_made_flower_wallpaper_loader.getAsset()}
-              alt="custom flower wallpaper"
-              width={custom_made_flower_wallpaper_loader.getWidth()}
-              height={custom_made_flower_wallpaper_loader.getHeight()}
+              src={flower_wallpaper_loader.getAsset()}
+              id="flowerWallpaper"
+              alt="wallpaper of flower in portrait"
+              width={flower_wallpaper_loader.getWidth()}
+              height={flower_wallpaper_loader.getHeight()}
             />
           </div>
         </div>
 
-        <div>
+        <div className="flex flex-col w-screen h-full bottom-0 bg-tertiary-500 justify-center items-center gap-4">
           <Image
-            src={flower_wallpaper_loader.getAsset()}
-            id="flowerWallpaper"
-            alt="wallpaper of flower in portrait"
-            width={flower_wallpaper_loader.getWidth()}
-            height={flower_wallpaper_loader.getHeight()}
+            src={border_loader.getAsset()}
+            id="upper_border"
+            alt="border image"
+            width={border_loader.getWidth()}
+            height={border_loader.getHeight()}
+            className="p-10 pl-20 pr-20 hidden"
           />
-        </div>
-      </div>
 
-      <div className="flex flex-col w-screen bottom-0 bg-tertiary-500 justify-center items-center">
-        <div className="w-[90vw] flex justify-between items-baseline max-[600px]:flex-col max-[600px]:items-center max-[1400px]:flex-col">
-          <div className="w-full flex flex-col justify-center max-[1400px]:items-center m-2 gap-2 max-[250px]:gap-0">
-            {
-              <div className="text-[20px] font-oswald font-medium text-tertiary-1100 w-[300px] text-center max-[250px]:text-[16px]">
-                PRABHDEEP SINGH ASSLA
-              </div>
-            }
-            {
-              <div className="w-[300px] flex justify-center gap-4 items-center max-[250px]:scale-[.8]">
-                {footerOptions_leftFlex}
-              </div>
-            }
-          </div>
-
-          <div className="h-full w-full">
-            <div className="flex justify-between align-middle gap-10 m-1 max-[600px]:gap-2 max-[677px]:hidden max-[530px]:flex max-[530px]:-translate-x-7 max-[530px]:flex-col max-[530px]:items-center max-[250px]:translate-x-0">
-              {footerOptions_rightFlex}
+          <div className="w-[90vw] flex justify-between items-baseline max-[600px]:flex-col max-[600px]:items-center max-[1400px]:flex-col">
+            <div className="w-full flex flex-col justify-center max-[1400px]:items-center m-2 gap-2 max-[250px]:gap-0">
+              {
+                <div className="text-[20px] font-oswald font-medium text-tertiary-1100 w-[300px] text-center max-[250px]:text-[16px]">
+                  PRABHDEEP SINGH ASSLA
+                </div>
+              }
+              {
+                <div className="w-[300px] flex justify-center gap-4 items-center max-[250px]:scale-[.8]">
+                  {footerOptions_leftFlex}
+                </div>
+              }
             </div>
-            <div className="hidden max-[677px]:flex max-[677px]:flex-col justify-between max-[530px]:hidden">
-              <div className="flex justify-between m-2">
+
+            <div className="h-full w-full">
+              <div className="flex justify-between align-middle gap-10 m-1 max-[600px]:gap-2 max-[677px]:hidden max-[530px]:flex max-[530px]:-translate-x-7 max-[530px]:flex-col max-[530px]:items-center max-[250px]:translate-x-0">
+                {footerOptions_rightFlex}
+              </div>
+              <div className="hidden max-[677px]:flex max-[677px]:flex-col justify-between max-[530px]:hidden">
+                <div className="flex justify-between m-2">
                   {footerOptions_rightFlex[0]}
                   {footerOptions_rightFlex[1]}
-              </div>
-              <div className="flex justify-between m-2">
+                </div>
+                <div className="flex justify-between m-2">
                   {footerOptions_rightFlex[2]}
                   {footerOptions_rightFlex[3]}
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="text-secondary-800 font-oswald font-medium uppercase text-[20px] w-[90vw] flex justify-between items-center p-2 border-t-2 border-secondary-800 max-[665px]:flex-col">
-          <div className="text-center m-1 p-1 max-[665px]:border-2 max-[665px]:border-secondary-500">
-            <span>© 2023 </span>
-            <Link href="/" className="underline">
-              deathofroses.com
-            </Link>
-            <span> | website developed by prabhdeep singh ASSLA</span>
+          <div className="text-secondary-800 font-oswald font-medium uppercase text-[20px] w-[90vw] flex justify-between items-center p-2 border-t-2 border-secondary-800 max-[665px]:flex-col">
+            <div className="text-center m-1 p-1 max-[665px]:border-2 max-[665px]:border-secondary-500">
+              <span>© 2023 </span>
+              <Link href="/" className="underline">
+                deathofroses.com
+              </Link>
+              <span> | website developed by prabhdeep singh ASSLA</span>
+            </div>
+            <div className="text-center m-1 p-1 max-[665px]:border-2 max-[665px]:border-secondary-500">
+              <Link href="/terms_of_use" className="underline">
+                Terms of use
+              </Link>
+              <span> | </span>
+              <Link href="/privacy_policy" className="underline">
+                privacy policy
+              </Link>
+            </div>
           </div>
-          <div className="text-center m-1 p-1 max-[665px]:border-2 max-[665px]:border-secondary-500">
-            <Link href="/terms_of_use" className="underline">
-              Terms of use
-            </Link>
-            <span> | </span>
-            <Link href="/privacy_policy" className="underline">
-              privacy policy
-            </Link>
-          </div>
+
+          <Image
+            src={border_loader.getAsset()}
+            id="lower_border"
+            alt="border image"
+            width={border_loader.getWidth()}
+            height={border_loader.getHeight()}
+            className="rotate-180 p-10 pl-20 pr-20 hidden"
+          />
         </div>
       </div>
     </div>

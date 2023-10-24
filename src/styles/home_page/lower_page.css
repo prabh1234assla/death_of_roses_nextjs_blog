@@ -1,3 +1,15 @@
 #img_container:hover #img{
     transform: scale(1.2);
 }
+
+@media (min-height: 2000px){
+    #lower_border{
+        display: block;
+    }
+}
+
+@media (min-height: 1700px){
+    #upper_border{
+        display: block;
+    }
+}

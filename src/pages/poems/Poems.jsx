@@ -216,15 +216,15 @@ export default function Poems() {
   let current_width = useWindowWidth(),
     multiplier = 1;
 
-  if (current_width > 2733) multiplier = 1.8;
-  else if (current_width <= 2733 && current_width > 2500) multiplier = 1.4;
-  else if (current_width <= 2500) multiplier = 1.2;
+  if (current_width > 2733) multiplier = 0.8;
+  else if (current_width <= 2733 && current_width > 2500) multiplier = 0.7;
+  else if (current_width <= 2500) multiplier = 0.6;
 
   return (
     <div className="w-screen h-screen bg-primary overflow-scroll flex flex-col items-center">
       <GoToHome flag={""} />
 
-      <div className="flex h-screen flex-row max-[2733px]:mt-[330px] max-[2400px]:mt-[630px] max-[1215px]:mt-[1530px] max-[1215px]:flex-col max-[1215px]:mt-0 bg-red-800">
+      <div className="flex h-screen flex-row max-[1215px]:flex-col mt-[150px] max-[1215px]:mt-0">
         <div className="fixed left-0 top-0 w-[30vw] h-screen left_box max-[2733px]:w-[25vw]">
           <div className="w-full h-full flex flex-col">
             <Image
@@ -237,7 +237,7 @@ export default function Poems() {
           </div>
         </div>
 
-        <div className="hidden justify-center items-center max-[1215px]:flex w-full h-full mt-36 mb-[800px] pb-10 max-[600px]:scale-[.6] max-[600px]:mb-[600px] max-[600px]:mt-[10px]">
+        <div className="hidden justify-center items-center max-[1215px]:flex w-full pt-36 pb-10">
           <Image
             src={rose_banner_loader.getAsset()}
             alt="rose banner media"
@@ -257,10 +257,7 @@ export default function Poems() {
           }}
         />
 
-        <div className="w-fit h-screen bg-red-400 gap-4 flex flex-col justify-center items-center">
-          <div className=" w-10 h-10 bg-red-500">
-kkk
-          </div>
+        <div className="w-fit h-fit flex flex-col items-center justify-center">
           {slide == 0 ? (
             <Poetry
               media_loader={() => media_loader_one()}
@@ -320,7 +317,7 @@ kkk
           }}
         />
 
-        <div className="hidden max-[1215px]:flex justify-center items-center w-full z-10 mt-[800px] max-[600px]:scale-[.6] max-[600px]:mt-[800px] min-[320px]:mt-[2300px] max-[240px]:mt-[5100px]">
+        <div className="hidden max-[1215px]:flex justify-center items-center scale-[.6] w-full z-10">
           <Image
             src={arrow_to_left_loader.getAsset()}
             alt="arrow to left media"
@@ -344,7 +341,7 @@ kkk
           />
         </div>
 
-        <div className="hidden justify-center items-center max-[1215px]:flex w-full h-full mt-36 mb-80 pb-10 max-[600px]:scale-[.6] max-[600px]:mb-[600px] max-[600px]:mt-[10px]">
+        <div className="hidden justify-center items-center max-[1215px]:flex w-full pb-4 pt-4">
           <Image
             src={rose_banner_loader.getAsset()}
             alt="rose banner media"
