@@ -7,6 +7,8 @@ import custom_made_flower_wallpaper from "../assets/images/home_page/custom_made
 import rose_chain from "../assets/images/home_page/rose_chain.svg";
 import button_flower from "../assets/images/home_page/button_flower.svg";
 import border from "../assets/images/home_page/border.svg";
+import rose from "../assets/images/home_page/rose.png";
+7931, 5287
 
 import assetsloader from "./assetsloader";
 
@@ -23,6 +25,7 @@ const custom_made_flower_wallpaper_loader = new assetsloader(
 const rose_chain_loader = new assetsloader(rose_chain, 675, 203);
 const button_flower_loader = new assetsloader(button_flower, 120, 120);
 const border_loader = new assetsloader(border, 2700, 360.54);
+const rose_loader = new assetsloader(rose, 2342*0.8, 956*0.8);
 
 export {
   flowers_loader,
@@ -33,5 +36,6 @@ export {
   custom_made_flower_wallpaper_loader,
   rose_chain_loader,
   button_flower_loader,
-  border_loader
+  border_loader,
+  rose_loader
 };

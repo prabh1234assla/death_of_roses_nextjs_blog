@@ -3,7 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url(./home_page/lower_page.css);
+@import url('./about/about.css');
+@import url('./poetry/poems.css');
+@import url('./thoughts/thoughts.css');
+@import url('./home_page/lower_page.css');
 
 @font-face {
   font-family: 'source-serif-pro-SemiboldIt';

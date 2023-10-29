@@ -32,7 +32,7 @@ export default function Navbar() {
   );
 
   return (
-    <div className="bg-tertiary-700 flex items-center justify-center relative z-20 max-[544px]:p-1">
+    <div className="bg-tertiary-700 fixed top-0 left-0 border-b-4 border-tertiary-1200 w-screen flex items-center justify-center z-20 max-[544px]:p-1">
       <div>
         <div className="flex items-center justify-center gap-10 max-[544px]:hidden">
           {navbarButtons}

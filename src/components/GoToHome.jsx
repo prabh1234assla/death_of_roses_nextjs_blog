@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { tripleDots_loader } from "./aboutAssetsloader";
 
-export default function GoToHome({flag}) {
+export default function GoToHome({ flag }) {
   return (
     <>
       <div className="flex justify-end bg-secondary-100 bg-opacity-[.12] absolute w-screen max-[1024px]:bg-secondary-800 max-[1024px]:bg-opacity-[.9] z-40">
@@ -20,23 +20,23 @@ export default function GoToHome({flag}) {
           >
             GO TO HOME
           </Link>
-          {
-            flag === 'thoughts' ?
+          {flag === "thoughts" ? (
             <Link
-            className="text-[53px] font-oswald font-light text-tertiary-500 active:text-secondary-600 border-4 border-transparent hover:border-secondary-1100 pl-2 pr-2 text-center max-[1024px]:text-[43px] max-[750px]:text-[33px] max-[550px]:text-[25px] max-[350px]:text-[23px]"
-            href="/"
+              className="text-[53px] font-oswald font-light text-tertiary-500 active:text-secondary-600 border-4 border-transparent hover:border-secondary-1100 pl-2 pr-2 text-center max-[1024px]:text-[43px] max-[750px]:text-[33px] max-[550px]:text-[25px] max-[350px]:text-[23px]"
+              href="/thoughts/Thoughts"
             >
               BACK TO THOUGHTS
-            </Link> :
-            flag === 'poems' ?
+            </Link>
+          ) : flag === "poems" ? (
             <Link
-            className="text-[53px] font-oswald font-light text-tertiary-500 active:text-secondary-600 border-4 border-transparent hover:border-secondary-1100 pl-2 pr-2 text-center max-[1024px]:text-[43px] max-[750px]:text-[33px] max-[550px]:text-[25px] max-[350px]:text-[23px]"
-            href="/"
+              className="text-[53px] font-oswald font-light text-tertiary-500 active:text-secondary-600 border-4 border-transparent hover:border-secondary-1100 pl-2 pr-2 text-center max-[1024px]:text-[43px] max-[750px]:text-[33px] max-[550px]:text-[25px] max-[350px]:text-[23px]"
+              href="/poems/Poems"
             >
               BACK TO POEMS
-            </Link> :
-            ''
-          }
+            </Link>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </>

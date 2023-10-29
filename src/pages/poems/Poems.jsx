@@ -257,7 +257,7 @@ export default function Poems() {
           }}
         />
 
-        <div className="w-fit h-fit flex flex-col items-center justify-center">
+        <div className="w-fit h-fit flex flex-col items-center justify-center" id="poetry_container">
           {slide == 0 ? (
             <Poetry
               media_loader={() => media_loader_one()}

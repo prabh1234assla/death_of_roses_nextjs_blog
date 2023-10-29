@@ -35,3 +35,14 @@
     rgba(246, 76, 114, 0.3) 100%
   );
 }
+
+#blob_slug{
+  transition: transform 200ms;
+}
+
+
+@media (min-height: 1592px) {
+  #poetry_container{
+    height: 100%;
+  }
+}

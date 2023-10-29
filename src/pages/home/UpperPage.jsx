@@ -4,6 +4,7 @@ import {
   garland_loader,
   wallpaper_loader,
   background_loader,
+  rose_loader,
 } from "@/components/imagesloader";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -35,10 +36,8 @@ export default function UpperPage() {
   else if (current_width <= 320) multiplier = 0.3;
 
   return (
-    <div className="h-fit w-screen bg-primary overflow-y-scroll overflow-x-hidden scroll-smooth">
-      <Navbar />
-
-      <div className="flex justify-between h-fit z-10 relative items-center max-[1495px]:flex-col max-[1495px]:gap-4">
+    <>
+      <div className="flex mt-[72px] justify-between h-fit z-10 relative items-center max-[1495px]:flex-col max-[1495px]:gap-4">
         <div className="w-fit h-fit relative max-[805px]:w-screen">
           <Image
             src={wallpaper_loader.getAsset()}
@@ -116,10 +115,17 @@ export default function UpperPage() {
             width={background_loader.getWidth()}
             height={background_loader.getHeight()}
           />
+          <Image
+            src={rose_loader.getAsset()}
+            alt={"rose wallpaper loader"}
+            width={rose_loader.getWidth()}
+            height={rose_loader.getHeight()}
+            className="absolute max-[1971px]:scale-[.6]"
+          />
         </div>
       </div>
 
-      <div className="flex max-[1495px]:hidden w-full bg-tertiary-1100 justify-center items-center">
+      <div className="flex max-[1495px]:hidden w-full bg-tertiary-1100 justify-center items-center relative">
         <Image
           src={background_loader.getAsset()}
           alt={"background wallpaper landscape"}
@@ -127,7 +133,14 @@ export default function UpperPage() {
           height={background_loader.getHeight()}
           className="w-full"
         />
+        <Image
+          src={rose_loader.getAsset()}
+          alt={"rose wallpaper loader"}
+          width={rose_loader.getWidth()}
+          height={rose_loader.getHeight()}
+          className="absolute max-[2466px]:scale-[.8] max-[1971px]:scale-[.6]"
+        />
       </div>
-    </div>
+    </>
   );
 }

@@ -95,8 +95,7 @@ export default function LowerPage() {
   });
 
   return (
-    <div className="h-screen w-screen bg-primary overflow-y-scroll">
-      <Navbar />
+    <>
       <div className="h-full flex flex-col justify-between">
         <div className="flex justify-between items-center max-[1350px]:flex-col max-[1350px]:mt-10 max-[1350px]:gap-10">
           <div className="pl-[20px] pr-[20px] flex flex-col justify-center items-center gap-[100px] max-[532px]:gap-[50px]">
@@ -215,6 +214,6 @@ export default function LowerPage() {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 }

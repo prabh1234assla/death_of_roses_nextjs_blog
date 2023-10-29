@@ -11,9 +11,9 @@ export default function About() {
   return (
     <>
       <div className="w-screen h-screen bg-primary overflow-hidden max-[1226px]:overflow-y-scroll flex-col">
-        <GoToHome flag={''}/>
+        <GoToHome flag={""} />
 
-        <div className="flex justify-between max-[1226px]:flex-col">
+        <div className="flex h-full relative justify-between max-[1226px]:flex-col">
           <div className="h-fit w-fit border-r-[16px] border-tertiary-1100">
             <Image
               src={wallpaper_loader.getAsset()}
@@ -23,8 +23,8 @@ export default function About() {
             />
           </div>
 
-          <div className="flex flex-col justify-evenly items-end pr-4 max-[1444px]:justify-center">
-            <div className="text-secondary-600 font-serif_i text-[40px] w-[711px] mb-[-200px] mt-[20px] leading-10 max-[1444px]:text-[35px] max-[1444px]:w-[500px] max-[1444px]:leading-8 max-[1444px]:translate-y-[-70px] max-[1226px]:p-8 max-[1192px]:-translate-y-8 max-[680px]:text-[30px] max-[544px]:w-[400px] max-[430px]:leading-7 max-[430px]:text-[25px] max-[397px]:w-[300px] max-[397px]:text-[20px] max-[397px]:leading-6 max-[290px]:w-[200px] max-[290px]:leading-5 max-[196px]:text-[16px] max-[196px]:w-[150px]">
+          <div className="flex flex-col justify-evenly items-end pr-4 max-[1444px]:justify-center" id="description">
+            <div className="text-secondary-600 font-serif_i text-[40px] w-[711px] mb-[-200px] mt-[20px] leading-10 max-[1444px]:text-[35px] max-[1444px]:w-[500px] max-[1444px]:leading-8 max-[1444px]:translate-y-[-70px] max-[1226px]:p-8 max-[1192px]:-translate-y-8 max-[680px]:text-[30px] max-[544px]:w-[400px] max-[430px]:leading-7 max-[430px]:text-[25px] max-[397px]:w-[300px] max-[397px]:text-[20px] max-[397px]:leading-6 max-[290px]:w-[200px] max-[290px]:leading-5 max-[196px]:text-[16px] max-[196px]:w-[150px]" id="paragraph">
               <p className="mb-4">
                 I am Prabhdeep Singh Assla. Born and raised in Jammu, Jammu and
                 Kashmir, India. I am a poet and an artist.
@@ -44,7 +44,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="absolute flex justify-center w-screen bottom-0 max-[1226px]:relative max-[609px]:bg-tertiary-900 max-[609px]:h-fit">
+          <div className="absolute flex justify-center bottom-0 w-screen max-[1226px]:relative max-[609px]:bg-tertiary-900 max-[609px]:h-fit" id="footer_banner">
             <div className="max-[601px]:absolute max-[448px]:rotate-90 max-[414px]:hidden max-[663px]:rotate-90 max-[609px]:hidden max-[663px]:z-10">
               <Image
                 src={window_loader.getAsset()}
