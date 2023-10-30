@@ -23,14 +23,14 @@ export default function GoToHome({ flag }) {
           {flag === "thoughts" ? (
             <Link
               className="text-[53px] font-oswald font-light text-tertiary-500 active:text-secondary-600 border-4 border-transparent hover:border-secondary-1100 pl-2 pr-2 text-center max-[1024px]:text-[43px] max-[750px]:text-[33px] max-[550px]:text-[25px] max-[350px]:text-[23px]"
-              href="/thoughts/Thoughts"
+              href="/thoughts"
             >
               BACK TO THOUGHTS
             </Link>
           ) : flag === "poems" ? (
             <Link
               className="text-[53px] font-oswald font-light text-tertiary-500 active:text-secondary-600 border-4 border-transparent hover:border-secondary-1100 pl-2 pr-2 text-center max-[1024px]:text-[43px] max-[750px]:text-[33px] max-[550px]:text-[25px] max-[350px]:text-[23px]"
-              href="/poems/Poems"
+              href="/poems"
             >
               BACK TO POEMS
             </Link>

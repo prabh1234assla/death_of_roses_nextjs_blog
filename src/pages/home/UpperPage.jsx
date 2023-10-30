@@ -107,6 +107,7 @@ export default function UpperPage() {
             height={flowers_loader.getHeight()}
           />
         </div>
+        </div>
 
         <div className="hidden max-[1495px]:flex w-screen bg-tertiary-1100 justify-center items-center">
           <Image
@@ -123,7 +124,6 @@ export default function UpperPage() {
             className="absolute max-[1971px]:scale-[.6]"
           />
         </div>
-      </div>
 
       <div className="flex max-[1495px]:hidden w-full bg-tertiary-1100 justify-center items-center relative">
         <Image

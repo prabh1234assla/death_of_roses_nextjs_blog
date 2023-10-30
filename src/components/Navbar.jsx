@@ -11,7 +11,7 @@ export default function Navbar() {
   if (buttonClicked) margin = "";
   else margin = "-mt-[34.4px]";
 
-  const navlinks = ["/home/UpperPage", "/about/About", "/poems/Poems", "/thoughts/Thoughts"];
+  const navlinks = ["/home", "/about", "/poems", "/thoughts"];
   const navbarButtons = ["HOME", "ABOUT", "POETRY", "THOUGHTS"].map(
     (el, index) => (
       <>

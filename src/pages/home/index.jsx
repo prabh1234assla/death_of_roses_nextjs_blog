@@ -1,6 +1,7 @@
 import UpperPage from "./UpperPage";
 import LowerPage from "./LowerPage";
 import Navbar from "@/components/Navbar";
+
 export default function _Home() {
   return (
     <>
