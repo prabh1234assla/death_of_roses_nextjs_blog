@@ -7,6 +7,7 @@
 @import url('./poetry/poems.css');
 @import url('./thoughts/thoughts.css');
 @import url('./home_page/lower_page.css');
+@import url('./home_page/upper_page.css');
 
 @font-face {
   font-family: 'source-serif-pro-SemiboldIt';

@@ -1,0 +1,21 @@
+.observe{
+    transition: all 1s;
+}
+
+.to_left{
+    translate: -300% 0;
+}
+
+.to_original{
+    translate: 0% 0;
+    opacity: 1;
+}
+
+.to_right{
+    translate: 300% 0;
+}
+
+
+.blur{
+    opacity: 0;
+}

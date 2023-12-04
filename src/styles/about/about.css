@@ -5,48 +5,38 @@
     }
 
     #description img{
-        translate: 0vw 4vh;
-    }
-}
-
-@media (min-width: 1227px) and (max-height: 911px){
-    #description img{
-        scale: 0.6;
-    }
-}
-
-@media (min-width: 1227px) and (max-height: 860px){
-    #description p{
-        background: red;
-        width: 600px;
-        translate: 11vw 1vh;
-        scale: 0.8;
-    }
-}
-
-@media (min-width: 1227px) and (max-height: 742px){
-    #description{
         translate: 0vw 10vh;
     }
 }
 
-@media (min-width: 1227px) and (max-height: 578px){
-    #description{
-        translate: 5vw 16vh;
+@media (min-width: 1227px) and (max-height: 833px){
+    #description p{
+        width: 300px;
+        translate: 24vw 10vh;
+        scale: 0.7;
+    }
+
+}
+
+@media (min-width: 1227px) and (max-height: 785px){
+    #description p{
+        translate: 24vw 20vh;
+        scale: 0.8;
     }
 
     #description img{
-        scale: 0.5;
-        translate: 0vw -16vh;
+        translate: 8vw 22vh;
+        scale: 0.45;
     }
 }
 
-@media (min-width: 1227px) and (max-height: 578px){
-    #description{
-        translate: 2vw 20vh;
+@media (min-width: 1227px) and (max-height: 709px){
+    #description p{
+        translate: 20vw 30vh;
+        scale: 0.7;
     }
 
-    #footer_banner{
-        scale: 0.5;
+    #description img{
+        scale: 0.7;
     }
 }

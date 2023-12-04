@@ -1,6 +1,6 @@
 import Image from "next/image";
 import contactsAssetsGenerator from "@/components/contactsloader";
-import Navbar from "../../components/Navbar";
+import { useRef, useState, useEffect } from "react";
 import {
   rose_chain_loader,
   custom_made_flower_wallpaper_loader,
@@ -9,7 +9,35 @@ import {
 } from "@/components/imagesloader";
 import Link from "next/link";
 
+const useElementOnScreen = (options) => {
+  const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const callbackFunction = (entries) => {
+    const [entry] = entries;
+    setIsVisible(entry.isIntersecting);
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, options);
+
+    if (containerRef.current) observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) observer.unobserve(containerRef.current);
+    };
+  }, [containerRef, options]);
+
+  return [containerRef, isVisible];
+};
+
 export default function LowerPage() {
+  const [containerRef, isVisible] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
   const footerOptions_rightFlex_object = {
     "ABOUT PRABHDEEP": [
       "MY STORY",
@@ -97,8 +125,8 @@ export default function LowerPage() {
   return (
     <>
       <div className="h-full flex flex-col justify-between">
-        <div className="flex justify-between items-center max-[1350px]:flex-col max-[1350px]:mt-10 max-[1350px]:gap-10">
-          <div className="pl-[20px] pr-[20px] flex flex-col justify-center items-center gap-[100px] max-[532px]:gap-[50px]">
+        <div className="flex justify-between items-center max-[1350px]:flex-col max-[1350px]:mt-10 max-[1350px]:gap-10" ref={containerRef}>
+          <div className={"pl-[20px] pr-[20px] flex flex-col justify-center items-center gap-[100px] max-[532px]:gap-[50px] observe " + (isVisible ? "to_original" : "to_left")}>
             <Image
               src={rose_chain_loader.getAsset()}
               id="rosechain"
@@ -133,7 +161,7 @@ export default function LowerPage() {
             </div>
           </div>
 
-          <div>
+          <div className={"observe " + (isVisible ? "to_original" : "to_right")}>
             <Image
               src={flower_wallpaper_loader.getAsset()}
               id="flowerWallpaper"
