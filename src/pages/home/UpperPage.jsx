@@ -1,4 +1,3 @@
-import MyThree from "@/components/distortion/Distortion";
 import {
   flowers_loader,
   garland_loader,
@@ -8,6 +7,7 @@ import {
 } from "@/components/imagesloader";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import { DistortionEffect } from "@/components/distortion/Distortion";
 
 const useElementOnScreen = (options) => {
   const containerRef = useRef(null);
@@ -77,7 +77,7 @@ export default function UpperPage() {
             (isVisible ? "to_original" : "to_left")
           }
         >
-          <MyThree img_loader={wallpaper_loader} />
+          <DistortionEffect img_loader={wallpaper_loader} class_name={""} color={""} />
 
           <div className="absolute left-0 top-0 w-[55%] h-full bg-tertiary-1100 bg-opacity-10">
             <div className="w-[45%] ml-[20px] text-secondary-400 font-serif_li max-[670px]:w-[20%] max-[590px]:ml-[10px]  max-[340px]:ml-[5px]">
@@ -133,12 +133,7 @@ export default function UpperPage() {
         </div>
 
         <div className={"observe " + (isVisible ? "to_original" : "to_right")}>
-          <Image
-            src={flowers_loader.getAsset()}
-            alt={"flowers wallpaper portrait"}
-            width={flowers_loader.getWidth()}
-            height={flowers_loader.getHeight()}
-          />
+          <DistortionEffect img_loader={flowers_loader} class_name={""} color={"red"} />
         </div>
       </div>
 

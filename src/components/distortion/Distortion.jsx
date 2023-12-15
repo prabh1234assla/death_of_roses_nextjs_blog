@@ -1,70 +1,51 @@
-import * as THREE from "three";
-import { WaterEffect } from "./WaterEffect";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { Canvas, extend, useFrame } from "@react-three/fiber";
+import { Effects, useAspect, useTexture } from "@react-three/drei";
+import {
+  FilmPass,
+  WaterPass,
+  UnrealBloomPass,
+  LUTPass,
+  GlitchPass,
+} from "three-stdlib";
 
-function MyThree({img_loader}) {
-  const refContainer = useRef(null);
+extend({ WaterPass, UnrealBloomPass, FilmPass, LUTPass, GlitchPass });
 
-  useEffect(() => {
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(img_loader.getWidth(), img_loader.getHeight());
-    refContainer.current &&
-      refContainer.current.appendChild(renderer.domElement);
-
-    const camera = new THREE.PerspectiveCamera();
-    camera.position.z = 5;
-
-    const scene = new THREE.Scene();
-
-    const loader = new THREE.TextureLoader();
-
-    const material = new THREE.MeshLambertMaterial({
-      map: loader.load(
-        img_loader.getAsset()
-      ),
-    });
-
-    const geometry = new THREE.PlaneGeometry(
-      img_loader.getWidth(),
-      img_loader.getHeight()
-    );
-
-    const mesh = new THREE.Mesh(geometry, material);
-    mesh.position.set(0, 0, 0);
-    scene.add(mesh);
-
-    const light = new THREE.PointLight(0xffffff, 1, 0);
-    light.position.set(1, 1, img_loader.getWidth());
-    scene.add(light);
-
-    const effect = new WaterEffect(renderer);
-
-    const handleResize = () => {
-      effect.setSize(img_loader.getWidth(), img_loader.getHeight());
-
-      camera.aspect = img_loader.getWidth() / img_loader.getHeight();
-      camera.updateProjectionMatrix();
-    };
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    renderer.setAnimationLoop(() => {
-      effect.render(scene, camera);
-    });
-
-    window.addEventListener("resize", handleResize);
-
-    renderer.setAnimationLoop(() => {
-      effect.render(scene, camera);
-    });
-
-    return () => {
-      refContainer.current.removeChild(renderer.domElement);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [img_loader]);
-  return <div ref={refContainer}></div>;
+export function DistortionEffect({ img_loader, class_name, color }) {
+  return (
+    <>
+      <div style={{ width: img_loader.getAsset().width, height: img_loader.getAsset().height }} className={class_name}>
+        <Canvas linear flat onCreated={state => state.gl.setClearColor("transparent")}>
+          <Image img_loader={img_loader} />
+          <Postpro />
+        </Canvas>
+      </div>
+    </>
+  );
 }
 
-export default MyThree;
+function Image({ img_loader }) {
+  const image = useTexture(img_loader.getAsset().src);
+  const [width, height] = useAspect(
+    img_loader.getAsset().width,
+    img_loader.getAsset().height
+  );
+
+  return (
+    <mesh scale={[width, height, 1]}>
+      <planeGeometry />
+      <meshBasicMaterial map={image} />
+    </mesh>
+  );
+}
+
+function Postpro() {
+  const water = useRef();
+  useFrame((state) => (water.current.time = state.clock.elapsedTime * 4));
+  return (
+    <Effects disableGamma>
+      <waterPass ref={water} factor={1} />
+      {/*<glitchPass />*/}
+    </Effects>
+  );
+}
