@@ -1,7 +1,7 @@
 export default function TextOnCircle({ title, rotate_title_text, rotate_container }) {
   return (
     <>
-      <div className="w-[280px] h-[280px] relative flex justify-center" style={{rotate : `${rotate_container}deg`}}>
+      <div className="w-[280px] h-[280px] relative flex justify-center rotate " style={{rotate : `${rotate_container}deg`}}>
         {title.split("").map((el, index) => {
           return (
             <>

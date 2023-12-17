@@ -1,7 +1,7 @@
-import Image from "next/image";
 import TextOnCircle from "./TextOnCircle";
 import poems from "../../../lib/poems.json";
 import Link from "next/link";
+import { DistortionEffect } from "../distortion/Distortion";
 
 export default function Poetry({
   media_loader,
@@ -30,14 +30,7 @@ export default function Poetry({
                 media_asset = media_loader_for_images.next().value;
                 return (
                   <>
-                    <Image
-                      src={media_asset.getAsset()}
-                      id={el.slug}
-                      alt={el.title + " poetry media image"}
-                      width={media_asset.getWidth()}
-                      height={media_asset.getHeight()}
-                      className="m-2"
-                    />
+                    <DistortionEffect img_loader={media_asset} factor={1} />
                   </>
                 );
               } catch {
@@ -51,7 +44,7 @@ export default function Poetry({
               ++text_sizes_iterator;
               return (
                 <>
-                  <Link href={`/poems/${poems[poetry_iterator].slug}`}>
+                  <Link href={`/poems/${poems[poetry_iterator].slug}`} className="link_containing_text_on_circle">
                     <div className="w-full h-full flex justify-center m-2 items-center hover:scale-[.8] poetry">
                       <div
                         className={

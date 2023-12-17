@@ -8,6 +8,7 @@ import {
   border_loader,
 } from "@/components/imagesloader";
 import Link from "next/link";
+import { DistortionEffect } from "@/components/distortion/Distortion";
 
 const useElementOnScreen = (options) => {
   const containerRef = useRef(null);
@@ -33,6 +34,12 @@ const useElementOnScreen = (options) => {
 
 export default function LowerPage() {
   const [containerRef, isVisible] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
+  const [footer_container_Ref, is_footer_Visible] = useElementOnScreen({
     root: null,
     rootMargin: "0px",
     threshold: 0,
@@ -122,29 +129,43 @@ export default function LowerPage() {
     );
   });
 
+  const [[f1, setF1], [f2, setF2], [f3, setF3]] = [
+    useState(1),
+    useState(1),
+    useState(1),
+  ];
+
   return (
     <>
       <div className="h-full flex flex-col justify-between">
-        <div className="flex justify-between items-center max-[1350px]:flex-col max-[1350px]:mt-10 max-[1350px]:gap-10" ref={containerRef}>
-          <div className={"pl-[20px] pr-[20px] flex flex-col justify-center items-center gap-[100px] max-[532px]:gap-[50px] observe " + (isVisible ? "to_original" : "to_left")}>
-            <Image
-              src={rose_chain_loader.getAsset()}
-              id="rosechain"
-              alt="chain of roses"
-              width={rose_chain_loader.getWidth()}
-              height={rose_chain_loader.getHeight()}
-            />
+        <div
+          className="flex justify-between items-center max-[1350px]:flex-col max-[1350px]:mt-10 max-[1350px]:gap-10"
+          ref={containerRef}
+        >
+          <div
+            className={
+              "pl-[20px] pr-[20px] flex flex-col justify-center items-center gap-[100px] max-[532px]:gap-[50px] observe " +
+              (isVisible ? "to_original" : "to_left")
+            }
+            onMouseEnter={() => setF1(3)}
+            onMouseLeave={() => setF1(1)}
+          >
+            <DistortionEffect img_loader={rose_chain_loader} factor={f1} />
 
-            <p className="hidden font-serif_sbi rounded-full text-[20px] text-secondary-900 w-full bg-tertiary-400 bg-opacity-70 text-center max-[532px]:block max-[486px]:text-[16px]">
+            <div className="hidden font-serif_sbi rounded-full text-[20px] text-secondary-900 w-full bg-tertiary-400 bg-opacity-70 text-center max-[532px]:block max-[486px]:text-[16px]">
               <p>&quot;anthology</p>
               <p className="-mt-[10px]">for</p>
               <p className="-mt-[10px]">broken hearts</p>
               <p className="-mt-[10px]">and</p>
               <p className="-mt-[10px]">soft souls&quot;</p>
-            </p>
+            </div>
 
-            <div className="flex justify-center items-center relative">
-              <div className="font-serif_sbi text-[26px] text-tertiary-800 absolute m-auto -mt-[220px] max-[1350px]:m-0 max-[1350px]:-mt-[220px] max-[696px]:text-[25px] max-[687px]:translate-x-3 max-[666px]:text-[24px] max-[648px]:translate-y-4 max-[602px]:text-[20px] max-[552px]:text-[18px] max-[532px]:hidden">
+            <div
+              className="flex justify-center items-center relative"
+              onMouseEnter={() => setF2(6)}
+              onMouseLeave={() => setF2(1)}
+            >
+              <div className="font-serif_sbi text-[26px] text-tertiary-800 absolute m-auto -mt-[220px] max-[1350px]:m-0 max-[1350px]:-mt-[220px] max-[696px]:text-[25px] max-[687px]:translate-x-3 max-[666px]:text-[24px] max-[648px]:translate-y-4 max-[602px]:text-[20px] max-[552px]:text-[18px] max-[532px]:hidden" >
                 <p>&quot;anthology</p>
                 <p className="-mt-[10px]">for</p>
                 <p className="-mt-[10px]">broken hearts</p>
@@ -152,27 +173,28 @@ export default function LowerPage() {
                 <p className="-mt-[10px]">soft souls&quot;</p>
               </div>
 
-              <Image
-                src={custom_made_flower_wallpaper_loader.getAsset()}
-                alt="custom flower wallpaper"
-                width={custom_made_flower_wallpaper_loader.getWidth()}
-                height={custom_made_flower_wallpaper_loader.getHeight()}
-              />
+              <div className="-z-10">
+                <DistortionEffect
+                  img_loader={custom_made_flower_wallpaper_loader}
+                  factor={f2}
+                />
+              </div>
             </div>
           </div>
 
-          <div className={"observe " + (isVisible ? "to_original" : "to_right")}>
-            <Image
-              src={flower_wallpaper_loader.getAsset()}
-              id="flowerWallpaper"
-              alt="wallpaper of flower in portrait"
-              width={flower_wallpaper_loader.getWidth()}
-              height={flower_wallpaper_loader.getHeight()}
+          <div
+            className={"observe " + (isVisible ? "to_original" : "to_right")}
+            onMouseEnter={() => setF3(3)}
+            onMouseLeave={() => setF3(1)}
+          >
+            <DistortionEffect
+              img_loader={flower_wallpaper_loader}
+              factor={f3}
             />
           </div>
         </div>
 
-        <div className="flex flex-col w-screen h-full bottom-0 bg-tertiary-500 justify-center items-center gap-4">
+        <div className={"flex flex-col w-screen h-full bottom-0 bg-tertiary-500 justify-center items-center gap-4 observe1 " + (is_footer_Visible ? "to_original" : "blur")} ref={footer_container_Ref} >
           <Image
             src={border_loader.getAsset()}
             id="upper_border"

@@ -2,6 +2,10 @@
     transition: all 1s;
 }
 
+.observe1{
+    transition: all 1.5s;
+}
+
 .to_left{
     translate: -300% 0;
 }

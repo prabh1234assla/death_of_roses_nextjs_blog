@@ -53,6 +53,12 @@ export default function UpperPage() {
     threshold: 0,
   });
 
+  const [roses_wallpaper_container_Ref, is_roses_wallpaper_container_Visible] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
   console.log(isVisible);
 
   let current_width = useWindowWidth(),
@@ -65,6 +71,8 @@ export default function UpperPage() {
   else if (current_width <= 400 && current_width > 320) multiplier = 0.4;
   else if (current_width <= 320) multiplier = 0.3;
 
+  const [[f1, setF1], [f2, setF2]] = [useState(1), useState(1)];
+
   return (
     <>
       <div
@@ -76,8 +84,10 @@ export default function UpperPage() {
             "w-fit h-fit relative max-[805px]:w-screen observe " +
             (isVisible ? "to_original" : "to_left")
           }
+          onMouseEnter={() => setF1(4)}
+          onMouseLeave={() => setF1(1)}
         >
-          <DistortionEffect img_loader={wallpaper_loader} class_name={""} color={""} />
+          <DistortionEffect img_loader={wallpaper_loader} factor={f1} />
 
           <div className="absolute left-0 top-0 w-[55%] h-full bg-tertiary-1100 bg-opacity-10">
             <div className="w-[45%] ml-[20px] text-secondary-400 font-serif_li max-[670px]:w-[20%] max-[590px]:ml-[10px]  max-[340px]:ml-[5px]">
@@ -132,8 +142,12 @@ export default function UpperPage() {
           </div>
         </div>
 
-        <div className={"observe " + (isVisible ? "to_original" : "to_right")}>
-          <DistortionEffect img_loader={flowers_loader} class_name={""} color={"red"} />
+        <div
+          className={"observe " + (isVisible ? "to_original" : "to_right")}
+          onMouseEnter={() => setF2(3)}
+          onMouseLeave={() => setF2(1)}
+        >
+          <DistortionEffect img_loader={flowers_loader} factor={f2}/>
         </div>
       </div>
 
@@ -155,9 +169,10 @@ export default function UpperPage() {
 
       <div
         className={
-          "flex max-[1495px]:hidden w-full bg-tertiary-1100 justify-center items-center relative observe " +
-          (isVisible ? "to_original" : "blur")
+          "flex max-[1495px]:hidden w-full bg-tertiary-1100 justify-center items-center relative observe1 " +
+          (is_roses_wallpaper_container_Visible ? "to_original" : "blur")
         }
+        ref={roses_wallpaper_container_Ref}
       >
         <Image
           src={background_loader.getAsset()}
