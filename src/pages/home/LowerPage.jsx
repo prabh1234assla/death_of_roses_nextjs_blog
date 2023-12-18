@@ -147,10 +147,10 @@ export default function LowerPage() {
               "pl-[20px] pr-[20px] flex flex-col justify-center items-center gap-[100px] max-[532px]:gap-[50px] observe " +
               (isVisible ? "to_original" : "to_left")
             }
-            onMouseEnter={() => setF1(3)}
-            onMouseLeave={() => setF1(1)}
           >
-            <DistortionEffect img_loader={rose_chain_loader} factor={f1} />
+            <div onMouseEnter={() => setF1(3)} onMouseLeave={() => setF1(1)}>
+              <DistortionEffect img_loader={rose_chain_loader} factor={f1} />
+            </div>
 
             <div className="hidden font-serif_sbi rounded-full text-[20px] text-secondary-900 w-full bg-tertiary-400 bg-opacity-70 text-center max-[532px]:block max-[486px]:text-[16px]">
               <p>&quot;anthology</p>
@@ -165,7 +165,7 @@ export default function LowerPage() {
               onMouseEnter={() => setF2(6)}
               onMouseLeave={() => setF2(1)}
             >
-              <div className="font-serif_sbi text-[26px] text-tertiary-800 absolute m-auto -mt-[220px] max-[1350px]:m-0 max-[1350px]:-mt-[220px] max-[696px]:text-[25px] max-[687px]:translate-x-3 max-[666px]:text-[24px] max-[648px]:translate-y-4 max-[602px]:text-[20px] max-[552px]:text-[18px] max-[532px]:hidden" >
+              <div className="font-serif_sbi text-[26px] text-tertiary-800 absolute m-auto -mt-[220px] max-[1350px]:m-0 max-[1350px]:-mt-[220px] max-[696px]:text-[25px] max-[687px]:translate-x-3 max-[666px]:text-[24px] max-[648px]:translate-y-4 max-[602px]:text-[20px] max-[552px]:text-[18px] max-[532px]:hidden">
                 <p>&quot;anthology</p>
                 <p className="-mt-[10px]">for</p>
                 <p className="-mt-[10px]">broken hearts</p>
@@ -194,7 +194,13 @@ export default function LowerPage() {
           </div>
         </div>
 
-        <div className={"flex flex-col w-screen h-full bottom-0 bg-tertiary-500 justify-center items-center gap-4 observe1 " + (is_footer_Visible ? "to_original" : "blur")} ref={footer_container_Ref} >
+        <div
+          className={
+            "flex flex-col w-screen h-full bottom-0 bg-tertiary-500 justify-center items-center gap-4 observe1 " +
+            (is_footer_Visible ? "to_original" : "blur")
+          }
+          ref={footer_container_Ref}
+        >
           <Image
             src={border_loader.getAsset()}
             id="upper_border"

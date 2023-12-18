@@ -17,8 +17,8 @@ export function DistortionEffect({ img_loader, factor }) {
     <>
       <div
         style={{
-          width: img_loader.getAsset().width,
-          height: img_loader.getAsset().height,
+          width: img_loader.getWidth(),
+          height: img_loader.getHeight(),
         }}
       >
         <Canvas linear flat>
@@ -43,7 +43,7 @@ function Image_Loader({ img_loader }) {
       <pointLight position={[10, 10, 10]} />
       <mesh scale={[width, height, 1]}>
         <planeGeometry />
-        <meshBasicMaterial map={image} />
+        <meshBasicMaterial transparent map={image} />
       </mesh>
     </>
   );

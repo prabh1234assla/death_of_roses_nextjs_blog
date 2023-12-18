@@ -1,7 +1,7 @@
 import TextOnCircle from "./TextOnCircle";
 import poems from "../../../lib/poems.json";
 import Link from "next/link";
-import { DistortionEffect } from "../distortion/Distortion";
+import Image from "next/image";
 
 export default function Poetry({
   media_loader,
@@ -30,7 +30,13 @@ export default function Poetry({
                 media_asset = media_loader_for_images.next().value;
                 return (
                   <>
-                    <DistortionEffect img_loader={media_asset} factor={1} />
+                      <Image
+                        src={media_asset.getAsset()}
+                        alt={"media image" + el}
+                        width={media_asset.getWidth()}
+                        height={media_asset.getHeight()}
+                        className="m-2"
+                      />
                   </>
                 );
               } catch {
