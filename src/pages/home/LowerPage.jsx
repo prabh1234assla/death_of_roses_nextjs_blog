@@ -9,6 +9,9 @@ import {
 } from "@/components/imagesloader";
 import Link from "next/link";
 import { DistortionEffect } from "@/components/distortion/Distortion";
+import Scene_Template from "@/components/Scene_Template";
+import ModelLoaderFlower from "@/components/home/ModelLoaderFlower";
+import { Model } from "../../../public/models/hydrangea_hortensia/Untitled";
 
 const useElementOnScreen = (options) => {
   const containerRef = useRef(null);
@@ -33,6 +36,8 @@ const useElementOnScreen = (options) => {
 };
 
 export default function LowerPage() {
+  const ref_hydrangea = useRef();
+
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: "0px",
@@ -182,15 +187,34 @@ export default function LowerPage() {
             </div>
           </div>
 
-          <div
-            className={"observe " + (isVisible ? "to_original" : "to_right")}
-            onMouseEnter={() => setF3(3)}
-            onMouseLeave={() => setF3(1)}
-          >
-            <DistortionEffect
-              img_loader={flower_wallpaper_loader}
-              factor={f3}
-            />
+          <div className="flex">
+            <div className="w-[1500px]">
+              <Scene_Template
+                Scene={
+                  <ModelLoaderFlower
+                    Model={
+                      <Model
+                        model_url={"/models/hydrangea_hortensia/untitled.glb"}
+                        model_ref={ref_hydrangea}
+                      />
+                    }
+                    light_indices={["z_shift_10", "x_shift_n_10", "y_shift_10"]}
+                    position={[[0, -2, 20], [10, -2, 0], [-10, -2, 0], [0, -2, 10], [0, -2, 10]]}
+                    intensity={[2000, 800, 1000, 3000, 3000]}
+                  />
+                }
+              />
+            </div>
+            <div
+              className={"observe " + (isVisible ? "to_original" : "to_right")}
+              onMouseEnter={() => setF3(3)}
+              onMouseLeave={() => setF3(1)}
+            >
+              <DistortionEffect
+                img_loader={flower_wallpaper_loader}
+                factor={f3}
+              />
+            </div>
           </div>
         </div>
 
