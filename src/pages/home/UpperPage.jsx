@@ -141,21 +141,25 @@ export default function UpperPage() {
           </div>
 
           <div className="w-[1000px]">
-            <Scene_Template
-              Scene={
-                <ModelLoaderFlower
-                  Model={
-                    <Model
-                      model_url={"/models/rose_flowers/untitled.glb"}
-                      model_ref={ref_red_flower_plant}
-                    />
-                  }
-                  light_indices={["z_shift_5"]}
-                  position={[[0, 0, 5]]}
-                  intensity={[150]}
-                />
-              }
-            />
+            {isVisible ? (
+              <Scene_Template
+                Scene={
+                  <ModelLoaderFlower
+                    Model={
+                      <Model
+                        model_url={"/models/rose_flowers/untitled.glb"}
+                        model_ref={ref_red_flower_plant}
+                      />
+                    }
+                    light_indices={["z_shift_5"]}
+                    position={[[0, 0, 5]]}
+                    intensity={[150]}
+                  />
+                }
+              />
+            ) : (
+              <></>
+            )}
           </div>
         </div>
 

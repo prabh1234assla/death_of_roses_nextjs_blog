@@ -1,11 +1,17 @@
-import { useGLTF } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei';
+import { useFrame } from "@react-three/fiber";
 
 export function Model({model_url, model_ref}) {
-  const { nodes, materials } = useGLTF(model_url)
+  const { nodes, materials } = useGLTF(model_url);
+
+  useFrame((state, delta, frame) => {
+    model_ref.current.rotation.y += 0.01;
+    model_ref.current.position.z = 1*Math.sin(state.clock.elapsedTime*3)-1.2
+  });
+
   return (
-    <group ref={model_ref} dispose={null}>
-      <mesh geometry={nodes.Cube.geometry} material={materials.Material} />
-      <group rotation={[Math.PI / 2, 0, 0]} scale={0.48}>
+    <group ref={model_ref} dispose={null} position={[0, -1.1, 0]}>
+      <group rotation={[1.07, -0.231, -0.002]} scale={0.005}>
         <mesh geometry={nodes['1coreopsi_1'].geometry} material={materials['1coreopsi_Intrnd']} />
         <mesh geometry={nodes['1coreopsi_2'].geometry} material={materials['1coreopsi_1stPetiole']} />
         <mesh geometry={nodes['1coreopsi_3'].geometry} material={materials['1coreopsi_1stLeaf']} />
@@ -19,3 +25,5 @@ export function Model({model_url, model_ref}) {
     </group>
   )
 }
+
+useGLTF.preload('/untitled.glb')

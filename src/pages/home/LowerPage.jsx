@@ -189,21 +189,35 @@ export default function LowerPage() {
 
           <div className="flex">
             <div className="w-[1500px]">
-              <Scene_Template
-                Scene={
-                  <ModelLoaderFlower
-                    Model={
-                      <Model
-                        model_url={"/models/hydrangea_hortensia/untitled.glb"}
-                        model_ref={ref_hydrangea}
-                      />
-                    }
-                    light_indices={["z_shift_10", "x_shift_n_10", "y_shift_10"]}
-                    position={[[0, -2, 20], [10, -2, 0], [-10, -2, 0], [0, -2, 10], [0, -2, 10]]}
-                    intensity={[2000, 800, 1000, 3000, 3000]}
-                  />
-                }
-              />
+              {isVisible ? (
+                <Scene_Template
+                  Scene={
+                    <ModelLoaderFlower
+                      Model={
+                        <Model
+                          model_url={"/models/hydrangea_hortensia/untitled.glb"}
+                          model_ref={ref_hydrangea}
+                        />
+                      }
+                      light_indices={[
+                        "z_shift_10",
+                        "x_shift_n_10",
+                        "y_shift_10",
+                      ]}
+                      position={[
+                        [0, -2, 20],
+                        [10, -2, 0],
+                        [-10, -2, 0],
+                        [0, -2, 10],
+                        [0, -2, 10],
+                      ]}
+                      intensity={[2000, 800, 1000, 3000, 3000]}
+                    />
+                  }
+                />
+              ) : (
+                <></>
+              )}
             </div>
             <div
               className={"observe " + (isVisible ? "to_original" : "to_right")}

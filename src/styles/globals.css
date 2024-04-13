@@ -1,75 +1,88 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('./about/about.css');
-@import url('./poetry/poems.css');
-@import url('./thoughts/thoughts.css');
-@import url('./home_page/lower_page.css');
-@import url('./home_page/upper_page.css');
+@import url("./about/about.css");
+@import url("./poetry/poems.css");
+@import url("./thoughts/thoughts.css");
+@import url("./home_page/lower_page.css");
+@import url("./home_page/upper_page.css");
+@import url("./home_page/slider.css");
 
 @font-face {
-  font-family: 'source-serif-pro-SemiboldIt';
-  src: url('../assets/fonts/source-serif-pro/SourceSerifPro-SemiboldIt.otf') format('opentype');
+  font-family: "source-serif-pro-SemiboldIt";
+  src: url("../assets/fonts/source-serif-pro/SourceSerifPro-SemiboldIt.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'source-serif-pro-LightIt';
-  src: url('../assets/fonts/source-serif-pro/SourceSerifPro-LightIt.otf') format('opentype');
+  font-family: "source-serif-pro-LightIt";
+  src: url("../assets/fonts/source-serif-pro/SourceSerifPro-LightIt.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'source-serif-pro-BoldIt';
-  src: url('../assets/fonts/source-serif-pro/SourceSerifPro-BoldIt.otf') format('opentype');
+  font-family: "source-serif-pro-BoldIt";
+  src: url("../assets/fonts/source-serif-pro/SourceSerifPro-BoldIt.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'source-serif-pro-ExtraLightIt';
-  src: url('../assets/fonts/source-serif-pro/SourceSerifPro-ExtraLightIt.otf') format('opentype');
+  font-family: "source-serif-pro-ExtraLightIt";
+  src: url("../assets/fonts/source-serif-pro/SourceSerifPro-ExtraLightIt.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'source-serif-pro-It';
-  src: url('../assets/fonts/source-serif-pro/SourceSerifPro-It.otf') format('opentype');
+  font-family: "source-serif-pro-It";
+  src: url("../assets/fonts/source-serif-pro/SourceSerifPro-It.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'source-serif-pro-Regular';
-  src: url('../assets/fonts/source-serif-pro/SourceSerifPro-Regular.otf') format('opentype');
+  font-family: "source-serif-pro-Regular";
+  src: url("../assets/fonts/source-serif-pro/SourceSerifPro-Regular.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'mother-sunflower-sans';
-  src: url('../assets/fonts/mother-sunflower-sans-font/MotherSunflowerSans-2O0nl.otf') format('opentype');
+  font-family: "mother-sunflower-sans";
+  src: url("../assets/fonts/mother-sunflower-sans-font/MotherSunflowerSans-2O0nl.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'flower-power-font';
-  src: url('../assets/fonts/flower-power-font/FlowerPowerBold-mne9.ttf') format('opentype');
+  font-family: "flower-power-font";
+  src: url("../assets/fonts/flower-power-font/FlowerPowerBold-mne9.ttf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'geesor-unique-font';
-  src: url('../assets/fonts/geesor-unique-font/GeesorUniqueDemoRegular-51Ada.otf') format('opentype');
+  font-family: "geesor-unique-font";
+  src: url("../assets/fonts/geesor-unique-font/GeesorUniqueDemoRegular-51Ada.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'carltine-font';
-  src: url('../assets/fonts/carltine-font/CarltineRegular-K7z5l.ttf') format('opentype');
+  font-family: "carltine-font";
+  src: url("../assets/fonts/carltine-font/CarltineRegular-K7z5l.ttf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'anjelika-rose-font';
-  src: url('../assets/fonts/anjelika-rose-font/AnjelikaRose-oRGd.ttf') format('opentype');
+  font-family: "anjelika-rose-font";
+  src: url("../assets/fonts/anjelika-rose-font/AnjelikaRose-oRGd.ttf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'growing-garden';
-  src: url('../assets/fonts/growing-garden/GrowingGarden-Regular.ttf') format('opentype');
+  font-family: "growing-garden";
+  src: url("../assets/fonts/growing-garden/GrowingGarden-Regular.ttf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'al-veshion';
-  src: url('../assets/fonts/al-veshion/Al_Veshion_PersonalUseOnly.ttf') format('opentype');
+  font-family: "al-veshion";
+  src: url("../assets/fonts/al-veshion/Al_Veshion_PersonalUseOnly.ttf")
+    format("opentype");
 }

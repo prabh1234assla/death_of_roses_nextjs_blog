@@ -1,9 +1,15 @@
-import { useGLTF } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
 
 export function Model({model_url, model_ref}) {
-  const { nodes, materials } = useGLTF(model_url)
+  const { nodes, materials } = useGLTF(model_url);
+
+  useFrame((state, delta, frame) => {
+    model_ref.current.rotation.y += 0.01;
+  });
+
   return (
-    <group ref={model_ref} dispose={null}>
+    <group ref={model_ref} dispose={null} scale={0.18} position={[0, -1.45, -1]}>
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.027}>
         <mesh geometry={nodes['1Newplan_1'].geometry} material={materials['1Newplan_Intrnd']} />
         <mesh geometry={nodes['1Newplan_2'].geometry} material={materials['1Newplan_Petiole']} />
