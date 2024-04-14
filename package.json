@@ -18,10 +18,7 @@
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "gsap": "^3.12.5",
-<<<<<<< Updated upstream
     "leva": "^0.9.35",
-=======
->>>>>>> Stashed changes
     "mongodb": "^6.1.0",
     "mongoose": "^7.5.2",
     "next": "13.4.19",

@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useLayoutEffect } from "react";
 import * as THREE from "three";
-import { OrbitControls, View } from "@react-three/drei";
+import { MeshDistortMaterial, OrbitControls, View } from "@react-three/drei";
 
 import { useControls } from "leva";
 
@@ -25,6 +25,8 @@ export default function EmergingImage({ ...props }) {
   const screenSize = useScreenSize();
   const [isIntersecting, setIsIntersecting] = useState(false);
 
+  const [current_type, set_Current_Type] = useState(0);
+
   useEffect(() => {
     new THREE.TextureLoader().loadAsync(props.url).then((data) => {
       data.colorSpace = THREE.LinearSRGBColorSpace;
@@ -36,9 +38,17 @@ export default function EmergingImage({ ...props }) {
   useEffect(() => {
     if (refMesh) {
       refMesh.material.uProgress = 0;
-      refMesh.material.uType = props.type;
+      refMesh.material.uType = current_type;
     }
-  }, [props.type, refMesh]);
+
+    if (ref) {
+      ref.current.style["touch-action"] = "initial";
+      console.log(current_type);
+      ref.current.addEventListener("click", () => {
+        set_Current_Type(props.click_type);
+      });
+    }
+  }, [props.type, refMesh, ref, current_type, props.click_type]);
 
   useGSAP(() => {
     if (refMesh?.material) {
@@ -50,9 +60,6 @@ export default function EmergingImage({ ...props }) {
     }
   }, [isIntersecting, props.type]);
 
-  // scroll check
-  // only set intersecting if refMesh is available, important
-  // Thanks Cody Bennett for this issue!
   useLayoutEffect(() => {
     if (refMesh) {
       let bounds = ref.current.getBoundingClientRect();
@@ -74,8 +81,9 @@ export default function EmergingImage({ ...props }) {
 
   return (
     <View {...props} ref={ref}>
-      <OrbitControls />
-      <mesh ref={setRefMesh}>
+      <mesh
+        ref={setRefMesh}
+      >
         <emergeMaterial
           uFillColor={new THREE.Color(fillColor)}
           transparent={true}

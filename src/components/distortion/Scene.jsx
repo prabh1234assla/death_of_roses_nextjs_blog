@@ -11,10 +11,8 @@ export default function Scene() {
           left: 0,
           width: "100vw",
           height: "100vh",
-          pointerEvents: "none",
+          pointerEvents: "none"
         }}
-        
-        // eventSource={document.body}
       >
         <View.Port />
         <OrthographicCamera makeDefault position={[0, 0, 300]} zoom={1} />
