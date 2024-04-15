@@ -15,8 +15,6 @@ const PIXELS = [
 ].map((v) => v / 100);
 
 export default function EmergingImage({ ...props }) {
-  const { fillColor } = useControls({ fillColor: "#403fb7" });
-
   const [refMesh, setRefMesh] = useState(null);
   const [texture, setTexture] = useState(null);
   const [textureSize, setTextureSize] = useState([0, 0]);
@@ -25,11 +23,9 @@ export default function EmergingImage({ ...props }) {
   const screenSize = useScreenSize();
   const [isIntersecting, setIsIntersecting] = useState(false);
 
-  const [current_type, set_Current_Type] = useState(0);
-
   useEffect(() => {
     new THREE.TextureLoader().loadAsync(props.url).then((data) => {
-      data.colorSpace = THREE.LinearSRGBColorSpace;
+      // data.colorSpace = THREE.LinearSRGBColorSpace;
       setTextureSize([data.source.data.width, data.source.data.height]);
       setTexture(data);
     });
@@ -38,17 +34,16 @@ export default function EmergingImage({ ...props }) {
   useEffect(() => {
     if (refMesh) {
       refMesh.material.uProgress = 0;
-      refMesh.material.uType = current_type;
+      refMesh.material.uType = props.type;
     }
 
     if (ref) {
       ref.current.style["touch-action"] = "initial";
-      console.log(current_type);
       ref.current.addEventListener("click", () => {
-        set_Current_Type(props.click_type);
+        props.trigger_on_click(props.click_type);
       });
     }
-  }, [props.type, refMesh, ref, current_type, props.click_type]);
+  }, [props.type, props.click_type]);
 
   useGSAP(() => {
     if (refMesh?.material) {
@@ -85,7 +80,7 @@ export default function EmergingImage({ ...props }) {
         ref={setRefMesh}
       >
         <emergeMaterial
-          uFillColor={new THREE.Color(fillColor)}
+          uFillColor={new THREE.Color('#F4C2C2')}
           transparent={true}
           uTexture={texture}
           uPixels={PIXELS}
