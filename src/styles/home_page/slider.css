@@ -26,6 +26,11 @@ body {
   display: inline-flex;
 }
 
+.distorted_image{
+  background-color: black;
+  border: 2px solid red;
+}
+
 .grid__item-img {
 	position: relative;
 	overflow: hidden;

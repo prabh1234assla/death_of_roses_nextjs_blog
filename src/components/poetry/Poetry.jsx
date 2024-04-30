@@ -2,6 +2,8 @@ import TextOnCircle from "./TextOnCircle";
 import poems from "../../../lib/poems.json";
 import Link from "next/link";
 import Image from "next/image";
+import CircleParticle from "./GlassEffect";
+import GlassEffect from "./GlassEffect";
 
 export default function Poetry({
   media_loader,
@@ -30,13 +32,12 @@ export default function Poetry({
                 media_asset = media_loader_for_images.next().value;
                 return (
                   <>
-                      <Image
-                        src={media_asset.getAsset()}
-                        alt={"media image" + el}
-                        width={media_asset.getWidth()}
-                        height={media_asset.getHeight()}
-                        className="m-2"
+                    <div className="m-2">
+                      <GlassEffect
+                        media_img={media_asset}
+                        geometry_type={el % 8}
                       />
+                    </div>
                   </>
                 );
               } catch {
@@ -45,12 +46,14 @@ export default function Poetry({
             } else {
               colors_asset = colors_for_poems.next().value;
               rotation_asset = rotation_adjustment_for_title.next().value;
-              console.log(poems[poetry_iterator]);
               ++poetry_iterator;
               ++text_sizes_iterator;
               return (
                 <>
-                  <Link href={`/poems/${poems[poetry_iterator].slug}`} className="link_containing_text_on_circle">
+                  <Link
+                    href={`/poems/${poems[poetry_iterator].slug}`}
+                    className="link_containing_text_on_circle"
+                  >
                     <div className="w-full h-full flex justify-center m-2 items-center hover:scale-[.8] poetry">
                       <div
                         className={

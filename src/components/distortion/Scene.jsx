@@ -1,7 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { View, OrthographicCamera, Preload } from "@react-three/drei";
 
-export default function Scene() {
+export default function Scene({ht, wd}) {
   return (
     <>
       <Canvas
@@ -9,9 +9,12 @@ export default function Scene() {
           position: "fixed",
           top: 0,
           left: 0,
-          width: "100vw",
-          height: "100vh",
+          width: "100%",
+          height: "100%",
           pointerEvents: "none"
+        }}
+        onClick={(el) => {
+          console.log(el);
         }}
       >
         <View.Port />

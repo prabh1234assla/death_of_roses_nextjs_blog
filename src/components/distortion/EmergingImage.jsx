@@ -43,7 +43,7 @@ export default function EmergingImage({ ...props }) {
         props.trigger_on_click(props.click_type);
       });
     }
-  }, [props.type, props.click_type]);
+  }, [props, refMesh]);
 
   useGSAP(() => {
     if (refMesh?.material) {

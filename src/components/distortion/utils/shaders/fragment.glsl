@@ -6,6 +6,7 @@ uniform float uPixels[36];
 uniform vec2 uTextureSize;
 uniform vec2 uElementSize;
 uniform sampler2D uTexture;
+
 varying vec2 vUv;
 vec3 blendNormal(vec3 base, vec3 blend) {
     return blend;
@@ -184,9 +185,9 @@ void main() {
         float fillGradient = smoothstep(customProg, customProg + gradWidth, vUv.x);
 
         gl_FragColor.a = 1.;
-        gl_FragColor.rgb = blendNormal(vec3(1.-lines),color.rgb , 0.9);
-        gl_FragColor.rgb = mix( gl_FragColor.rgb,fillColor, fillGradient);
-        gl_FragColor.rgb = mix( gl_FragColor.rgb,defaultColor.rgb, finalProgress);
+        gl_FragColor.rgb = blendNormal(vec3(1. - lines), color.rgb, 0.9);
+        gl_FragColor.rgb = mix(gl_FragColor.rgb, fillColor, fillGradient);
+        gl_FragColor.rgb = mix(gl_FragColor.rgb, defaultColor.rgb, finalProgress);
 
     } else if(uType == 1.) {
 

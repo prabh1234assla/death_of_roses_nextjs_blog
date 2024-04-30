@@ -12,7 +12,7 @@ export default function Image_Distortion_Pixel_Effects({
 
   return (
     <>
-      <Scene />
+      <Scene ht={img_loader.height} wd={img_loader.width} />
       <div
         className="grid__item-img"
         style={{

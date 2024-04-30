@@ -24,8 +24,7 @@ import { Model as Model_f } from "../../../public/models/purple_big_flower/Untit
 import { Model as Model_g } from "../../../public/models/flower_pink_cup/Untitled";
 import Image_Distortion_Pixel_Effects from "./Image_Distortion_Pixel_Effects";
 
-export default function Slide({ class_name, visible_or_not }) {
-  console.log(visible_or_not);
+export default function Slide({ class_name }) {
 
   const useElementOnScreen = (options) => {
     const containerRef = useRef(null);
@@ -61,8 +60,8 @@ export default function Slide({ class_name, visible_or_not }) {
   const purple_big_flower_ref = useRef(null);
   const flower_pink_cup_ref = useRef(null);
 
-  const containerRef = [null, null, null, null, null, null];
-  const isVisible = [null, null, null, null, null, null];
+  const containerRef = new Array(18);
+  const isVisible = new Array(18);
 
   [containerRef[0], isVisible[0]] = useElementOnScreen({
     root: null,
@@ -105,6 +104,77 @@ export default function Slide({ class_name, visible_or_not }) {
     rootMargin: "0px",
     threshold: 0,
   });
+  [containerRef[7], isVisible[7]] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
+  [containerRef[8], isVisible[8]] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
+  [containerRef[9], isVisible[9]] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
+  [containerRef[10], isVisible[10]] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
+  [containerRef[11], isVisible[11]] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
+  [containerRef[12], isVisible[12]] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
+  [containerRef[13], isVisible[13]] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
+  [containerRef[14], isVisible[14]] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
+  [containerRef[15], isVisible[15]] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
+  [containerRef[16], isVisible[16]] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
+  [containerRef[17], isVisible[17]] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
+  [containerRef[18], isVisible[18]] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
 
   return (
     <>
@@ -132,16 +202,30 @@ export default function Slide({ class_name, visible_or_not }) {
         ) : null}
       </div>
 
-      <div className={class_name + " grid__item-img"}>
-        <Image_Distortion_Pixel_Effects img_loader={media1} on_click_type={2} />
-      </div>
-
-      <div className={class_name}>
-        <Image_Distortion_Pixel_Effects img_loader={media2} on_click_type={3} />
-      </div>
-
       <div className={class_name} ref={containerRef[1]}>
         {isVisible[1] ? (
+          <div className="distorted_image">
+            <Image_Distortion_Pixel_Effects
+              img_loader={media1}
+              on_click_type={4}
+            />
+          </div>
+        ) : null}
+      </div>
+
+      <div className={class_name} ref={containerRef[3]}>
+        {isVisible[3] ? (
+          <div className="distorted_image">
+            <Image_Distortion_Pixel_Effects
+              img_loader={media2}
+              on_click_type={4}
+            />
+          </div>
+        ) : null}
+      </div>
+
+      <div className={class_name} ref={containerRef[4]}>
+        {isVisible[4] ? (
           <Scene_Template
             Scene={
               <ModelLoaderFlower
@@ -160,16 +244,30 @@ export default function Slide({ class_name, visible_or_not }) {
         ) : null}
       </div>
 
-      <div className={class_name}>
-        <Image_Distortion_Pixel_Effects img_loader={media3} on_click_type={4} />
+      <div className={class_name} ref={containerRef[5]}>
+        {isVisible[5] ? (
+          <div className="distorted_image">
+            <Image_Distortion_Pixel_Effects
+              img_loader={media3}
+              on_click_type={4}
+            />
+          </div>
+        ) : null}
       </div>
 
-      <div className={class_name}>
-        <Image_Distortion_Pixel_Effects img_loader={media4} on_click_type={3} />
+      <div className={class_name} ref={containerRef[6]}>
+        {isVisible[6] ? (
+          <div className="distorted_image">
+            <Image_Distortion_Pixel_Effects
+              img_loader={media4}
+              on_click_type={4}
+            />
+          </div>
+        ) : null}
       </div>
 
-      <div className={class_name} ref={containerRef[2]}>
-        {isVisible[2] ? (
+      <div className={class_name} ref={containerRef[7]}>
+        {isVisible[7] ? (
           <Scene_Template
             Scene={
               <ModelLoaderFlower
@@ -188,16 +286,30 @@ export default function Slide({ class_name, visible_or_not }) {
         ) : null}
       </div>
 
-      <div className={class_name}>
-        <Image_Distortion_Pixel_Effects img_loader={media5} on_click_type={2} />
+      <div className={class_name} ref={containerRef[8]}>
+        {isVisible[8] ? (
+          <div className="distorted_image">
+            <Image_Distortion_Pixel_Effects
+              img_loader={media5}
+              on_click_type={4}
+            />
+          </div>
+        ) : null}
       </div>
 
-      <div className={class_name}>
-        <Image_Distortion_Pixel_Effects img_loader={media6} on_click_type={4} />
+      <div className={class_name} ref={containerRef[9]}>
+        {isVisible[9] ? (
+          <div className="distorted_image">
+            <Image_Distortion_Pixel_Effects
+              img_loader={media6}
+              on_click_type={4}
+            />
+          </div>
+        ) : null}
       </div>
 
-      <div className={class_name} ref={containerRef[3]}>
-        {isVisible[3] ? (
+      <div className={class_name} ref={containerRef[10]}>
+        {isVisible[10] ? (
           <Scene_Template
             Scene={
               <ModelLoaderFlower
@@ -216,16 +328,30 @@ export default function Slide({ class_name, visible_or_not }) {
         ) : null}
       </div>
 
-      <div className={class_name}>
-        <Image_Distortion_Pixel_Effects img_loader={media7} on_click_type={3} />
+      <div className={class_name} ref={containerRef[11]}>
+        {isVisible[11] ? (
+          <div className="distorted_image">
+            <Image_Distortion_Pixel_Effects
+              img_loader={media7}
+              on_click_type={4}
+            />
+          </div>
+        ) : null}
       </div>
 
-      <div className={class_name}>
-        <Image_Distortion_Pixel_Effects img_loader={media8} on_click_type={2} />
+      <div className={class_name} ref={containerRef[12]}>
+        {isVisible[12] ? (
+          <div className="distorted_image">
+            <Image_Distortion_Pixel_Effects
+              img_loader={media8}
+              on_click_type={4}
+            />
+          </div>
+        ) : null}
       </div>
 
-      <div className={class_name} ref={containerRef[4]}>
-        {isVisible[4] ? (
+      <div className={class_name} ref={containerRef[13]}>
+        {isVisible[13] ? (
           <Scene_Template
             Scene={
               <ModelLoaderFlower
@@ -244,19 +370,8 @@ export default function Slide({ class_name, visible_or_not }) {
         ) : null}
       </div>
 
-      <div className={class_name}>
-        <Image_Distortion_Pixel_Effects img_loader={media9} on_click_type={2} />
-      </div>
-
-      <div className={class_name}>
-        <Image_Distortion_Pixel_Effects
-          img_loader={media10}
-          on_click_type={3}
-        />
-      </div>
-
-      <div className={class_name} ref={containerRef[5]}>
-        {isVisible[5] ? (
+      <div className={class_name} ref={containerRef[14]}>
+        {isVisible[14] ? (
           <Scene_Template
             Scene={
               <ModelLoaderFlower
@@ -268,6 +383,7 @@ export default function Slide({ class_name, visible_or_not }) {
                 }
                 light_indices={["z_shift_5"]}
                 position={[[0, 0, 8]]}
+                z
                 intensity={[180]}
               />
             }
@@ -275,15 +391,30 @@ export default function Slide({ class_name, visible_or_not }) {
         ) : null}
       </div>
 
-      <div className={class_name}>
-        <Image_Distortion_Pixel_Effects
-          img_loader={media11}
-          on_click_type={4}
-        />
+      <div className={class_name} ref={containerRef[15]}>
+        {isVisible[15] ? (
+          <div className="distorted_image">
+            <Image_Distortion_Pixel_Effects
+              img_loader={media9}
+              on_click_type={4}
+            />
+          </div>
+        ) : null}
       </div>
 
-      <div className={class_name} ref={containerRef[6]}>
-        {isVisible[6] ? (
+      <div className={class_name} ref={containerRef[16]}>
+        {isVisible[16] ? (
+          <div className="distorted_image">
+            <Image_Distortion_Pixel_Effects
+              img_loader={media10}
+              on_click_type={4}
+            />
+          </div>
+        ) : null}
+      </div>
+
+      <div className={class_name} ref={containerRef[18]}>
+        {isVisible[18] ? (
           <Scene_Template
             Scene={
               <ModelLoaderFlower
@@ -299,6 +430,17 @@ export default function Slide({ class_name, visible_or_not }) {
               />
             }
           />
+        ) : null}
+      </div>
+
+      <div className={class_name} ref={containerRef[17]}>
+        {isVisible[17] ? (
+          <div className="distorted_image">
+            <Image_Distortion_Pixel_Effects
+              img_loader={media11}
+              on_click_type={4}
+            />
+          </div>
         ) : null}
       </div>
     </>

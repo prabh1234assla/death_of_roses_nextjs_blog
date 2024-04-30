@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useLayoutEffect, useRef, useEffect, useState } from "react";
+import { useLayoutEffect, useRef, useEffect, useState, createRef } from "react";
 import Navbar from "@/components/Navbar";
 import UpperPage from "./UpperPage";
 import LowerPage from "./LowerPage";
@@ -40,19 +40,15 @@ export default function Scene() {
           scrub: 1,
           snap: 1 / (panels.length - 1),
           end: () => "+=" + slider.current.offsetWidth,
-          markers: true
+          markers: true,
         },
       });
-
-      if(ScrollTrigger.isInViewport(panels[3])){
-        console.log('third element is  visible')
-      }
     }, component);
     return () => ctx.revert();
   });
 
   const useElementOnScreen = (options) => {
-    const references = useRef([]);
+    const containerRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
     const callbackFunction = (entries) => {
@@ -68,9 +64,9 @@ export default function Scene() {
       return () => {
         if (containerRef.current) observer.unobserve(containerRef.current);
       };
-    }, [references, options]);
+    }, [containerRef, options]);
 
-    return [references, isVisible];
+    return [containerRef, isVisible];
   };
 
   const [containerRef, isVisible] = useElementOnScreen({
@@ -79,20 +75,14 @@ export default function Scene() {
     threshold: 0,
   });
 
-  
-  console.log(containerRef, isVisible)
-
   return (
     <div className="bg-primary" ref={component}>
-      {/* <Navbar />
-      <UpperPage /> */}
-      <div
-        ref={mergeRefs(containerRef, slider)}
-        className="container"
-      >
-        <Slide class_name={"panel"} visible_or_not={isVisible} />
+      <Navbar />
+      <UpperPage />
+      <div ref={mergeRefs(containerRef, slider)} className="container">
+        {isVisible ? <Slide class_name={"panel"} /> : null}
       </div>
-      {/* <LowerPage /> */}
+      <LowerPage />
     </div>
   );
 }

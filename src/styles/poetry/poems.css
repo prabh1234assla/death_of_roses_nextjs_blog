@@ -45,7 +45,7 @@
 }
 
 .link_containing_text_on_circle:hover .rotate {
-  animation: none;
+  animation-play-state: paused;
 }
 
 @keyframes revolve {
