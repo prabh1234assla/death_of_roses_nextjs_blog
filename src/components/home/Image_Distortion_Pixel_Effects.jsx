@@ -8,8 +8,6 @@ export default function Image_Distortion_Pixel_Effects({
   on_click_type,
 }) {
 
-  const [current_type, set_Current_Type] = useState(0);
-
   return (
     <>
       <Scene ht={img_loader.height} wd={img_loader.width} />
@@ -21,10 +19,9 @@ export default function Image_Distortion_Pixel_Effects({
         }}
       >
         <EmergingImage
-          type={current_type}
+          type={0}
           click_type={on_click_type}
           url={img_loader.src}
-          trigger_on_click={set_Current_Type}
           className="grid__item-img-inner"
         />
       </div>

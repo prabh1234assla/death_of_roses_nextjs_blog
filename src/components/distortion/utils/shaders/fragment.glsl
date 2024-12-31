@@ -186,8 +186,11 @@ void main() {
 
         gl_FragColor.a = 1.;
         gl_FragColor.rgb = blendNormal(vec3(1. - lines), color.rgb, 0.9);
+<<<<<<< HEAD
         gl_FragColor.rgb = mix(gl_FragColor.rgb, fillColor, fillGradient);
         gl_FragColor.rgb = mix(gl_FragColor.rgb, defaultColor.rgb, finalProgress);
+=======
+>>>>>>> parent of 9000d2e (the children emerging_image component will have useState that will cause trigger of hook in parent component and will cause rerender of whole EmergingImage component)
 
     } else if(uType == 1.) {
 

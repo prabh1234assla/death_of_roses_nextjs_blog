@@ -9,7 +9,7 @@ import fragment_shader from "./shaders/fragment.glsl";
 const EmergeMaterial = shaderMaterial(
   {
     uTime: 0,
-    uFillColor: new THREE.Color("#F4C2C2"),
+    uFillColor: new THREE.Color("#f60"),
     uProgress: 0,
     uPixels: null,
     uType: 0,
