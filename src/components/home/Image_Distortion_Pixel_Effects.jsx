@@ -2,6 +2,7 @@ import { useState } from "react";
 import EmergingImage from "../distortion/EmergingImage";
 import Scene from "../distortion/Scene";
 import Scene_Template from "../Scene_Template";
+import Image from "next/image";
 
 export default function Image_Distortion_Pixel_Effects({
   img_loader,
@@ -10,7 +11,6 @@ export default function Image_Distortion_Pixel_Effects({
 
   return (
     <>
-      <Scene ht={img_loader.height} wd={img_loader.width} />
       <div
         className="grid__item-img"
         style={{

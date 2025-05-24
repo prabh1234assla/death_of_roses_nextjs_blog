@@ -48,11 +48,7 @@ export default function EmergingImage({ ...props }) {
         set_Current_Type(props.click_type);
       });
     }
-<<<<<<< HEAD
-  }, [props, refMesh]);
-=======
   }, [props.type, refMesh, ref, current_type, props.click_type]);
->>>>>>> parent of 9000d2e (the children emerging_image component will have useState that will cause trigger of hook in parent component and will cause rerender of whole EmergingImage component)
 
   useGSAP(() => {
     if (refMesh?.material) {
